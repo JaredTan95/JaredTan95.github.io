@@ -32,7 +32,7 @@ googleAnalytics = "UA-145022311-1"
   homeTitle = "Hi,我是谭建" # Set a different text for the header on the home page
   #titleicon = '<i class="fab fa-java"></i>'
   #subtitle = "...subtitle...."
-  keywords = "java、微服务、OpenTracing、OpenTelementry、APM、docker、kubernetes、istio、devops、hugo、golang、云原生"
+  keywords = "Java、微服务、OpenTracing、OpenTelementry、APM、docker、kubernetes、istio、devops、hugo、golang、云原生"
   description = "description"
   mainSections = ["posts"]
   logo = "http://q67bf0oit.bkt.clouddn.com/blog/photo.jpeg" # Expecting square dimensions
