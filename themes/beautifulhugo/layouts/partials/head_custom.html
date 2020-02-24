@@ -1,0 +1,43 @@
+<!--
+If you want to include any custom html just before </head>, put it in /layouts/partials/head_custom.html
+Do not put anything in this file - it's only here so that hugo won't throw an error if /layouts/partials/head_custom.html doesn't exist.
+-->
+
+{{- partial "css-assets.html" . -}}
+<!--<link rel="stylesheet" href="{{ "css/my.css" | absURL }}" />-->
+<!--<link rel="stylesheet" href="{{ "css/prism.css" | absURL }}" />-->
+<!--<link rel="stylesheet" href="{{ "css/toc.css" | absURL }}" />-->
+
+<!-- baidu analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?efe96f04908ae320df234a4f5626879e";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script src="{{ "js/pace.min.js" | absURL }}"></script>
+
+<!-- 不蒜子 -->
+<!--<script async src="//cdn.busuanzi.ibruce.info/cdn/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+<script src="{{ "js/busuanzi.pure.mini.js" | absURL }}"></script>
+<script>
+var int = setInterval(fixCount, 50);
+function fixCount() {
+    if (document.getElementById('busuanzi_container_site_uv').ownerDocument.defaultView.getComputedStyle(document.getElementById('busuanzi_container_site_uv'), null).display === 'inline') {
+        clearInterval(int);
+        document.getElementById('busuanzi_value_site_uv') = parseInt(document.getElementById('busuanzi_value_site_uv').innerHTML) + parseInt('{{ .Site.Params.busuanzi_site_offset }}');
+    }
+}
+</script>
+
+<!-- mathjax -->
+{{ partial "math.html" . }}
+
+<!--顶部阅读进度条-->
+{{ if (and .IsPage (not .Params.notsb)) }}
+    <div class="top-scroll-bar"></div>
+{{ end }}

@@ -1,0 +1,423 @@
+body, a:hover {
+    cursor: url(https://hugo-picture.oss-cn-beijing.aliyuncs.com/images/cursor.png), progress !important;
+}
+h2 {
+    display: block;
+    font-size: 1.6em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+h2::before {
+    content: "#";
+    margin-right: 5px;
+    color: #2d96bd;
+}
+h3 {
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #0099CC;
+}
+h4 {
+    font-size: 1.2em;
+    color: #F77A0B;
+    margin-top: 20px
+}
+h5 {
+    font-size: 1.1em;
+}
+li {
+    line-height: 2;
+    font-size: 0.9em;
+}
+
+blockquote {
+    padding: 10px 20px;
+    margin: 30px 0 20px;
+    border-left: 5px solid #986dbd;
+    background-color: #f5f0fa;
+}
+b, strong {
+    color: hsl(216, 80%, 44%);
+    word-break: break-all;
+}
+code {
+    word-break: break-all;
+    color: hsl(216, 100%, 68%);
+    background-color: rgba(238, 238, 238, 0.8);
+}
+#blue {
+color: #2780e3;
+}
+#inline-toc {
+    display: inline-block;
+    border-radius: 80% 100% 90% 20%;
+    background-color: rgb(227, 242, 253);
+    color: #555;
+    padding: 0.05em 0.4em;
+    margin: 2px 5px 2px 0px;
+    line-height: 1.4;
+}
+#uinline-toc {
+    display: inline-block;
+    border-radius: 80% 100% 90% 20%;
+    background-color: rgb(227, 242, 253);
+    color: #555;
+    padding: 0.05em 0.4em;
+    margin: 2px 5px 2px 0px;
+    line-height: 1.5;
+}
+#small {
+    font-size: .9em;
+    color: #888;
+}
+#download {
+display: inline-block;
+padding: 0 10px;
+color: #000;
+background: transparent;
+border: 2px solid #000;
+border-radius: 2px;
+transition: all .5s ease;
+font-weight: bold;
+&:hover {
+background: #000;
+color: #fff;
+}
+}
+#inline-yellow {
+display:inline;
+padding:.2em .6em .3em;
+font-size:80%;
+font-weight:bold;
+line-height:1;
+color:#fff;
+text-align:center;
+white-space:nowrap;
+vertical-align:baseline;
+border-radius:0;
+background-color: #f0ad4e;
+}
+#inline-green {
+display:inline;
+padding:.2em .6em .3em;
+font-size:80%;
+font-weight:bold;
+line-height:1;
+color:#fff;
+text-align:center;
+white-space:nowrap;
+vertical-align:baseline;
+border-radius:0;
+background-color: #5cb85c;
+}
+#inline-blue {
+display:inline;
+padding:.2em .6em .3em;
+font-size:80%;
+font-weight:bold;
+line-height:1;
+color:#fff;
+text-align:center;
+white-space:nowrap;
+vertical-align:baseline;
+border-radius:0;
+background-color: #2780e3;
+}
+#inline-purple {
+display:inline;
+padding:.2em .6em .3em;
+font-size:80%;
+font-weight:bold;
+line-height:1;
+color:#fff;
+text-align:center;
+white-space:nowrap;
+vertical-align:baseline;
+border-radius:0;
+background-color: #9954bb;
+}
+#div-border-left-red {
+display: block;
+padding: 10px;
+margin: 10px 0;
+border: 1px solid #ccc;
+border-left-width: 5px;
+border-radius: 3px;
+border-left-color: #df3e3e;
+}
+
+/* 主页侧边栏样式 */
+.myfriends {
+    text-align: center;
+    background-color: #fff;
+    opacity: 0.9;
+}
+
+.myfriends a {
+    color: black;
+}
+
+.myfriends p {
+    display: none;
+}
+
+.friendurl {
+    text-decoration: none !important;
+    color: black;
+}
+
+.myfriend {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    padding: 2px;
+    box-shadow: 1px 1px 1px rgba(0,0,0, .15);
+    margin-top: 14px !important;
+    margin-left: 14px !important;
+    background-color: #fff;
+}
+
+.frienddiv {
+    height: 92px;
+    margin-top: 10px;
+    width: 100%;
+    display: inline-block !important;
+}
+
+.frienddiv:hover {
+    background: rgba(87, 142, 224, 0.15);
+}
+
+.frienddiv:hover .frienddivleft img {
+    transition: .9s!important;
+    -webkit-transition: .9s!important;
+    -moz-transition: .9s!important;
+    -o-transition: .9s!important;
+    -ms-transition: .9s!important;
+    transform: rotate(360deg)!important;
+    -webkit-transform: rotate(360deg)!important;
+    -moz-transform: rotate(360deg)!important;
+    -o-transform: rotate(360deg)!important;
+    -ms-transform: rotate(360deg)!important;
+}
+
+.frienddivleft {
+    width: 92px;
+    float: left;
+}
+
+.frienddivleft {
+    margin-right: 2px;
+}
+
+.frienddivright {
+    margin-top: 18px;
+    margin-right: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.link-title {
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 100px;
+}
+.link-description {
+    font-size: .8rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 100px;
+}
+.sidebar-block {
+    margin-top: 10px;
+    padding: 15px;
+    -webkit-box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.05);
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.05);
+}
+.sidebar-title {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid#eee;
+}
+.sidebar-wrap {
+    padding-bottom: 1rem!important;
+    padding-top: 1rem!important;
+}
+.sidebar-about {
+    text-align: center!important;
+    padding: 1.5rem!important;
+    margin-bottom: 1rem!important;
+    border-radius: .25rem!important;
+    background-color: #f8f9fa!important;
+}
+.about-img {
+    margin: auto;
+    width: 66px;
+    height: auto;
+}
+.about-text {
+    color: #777;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 27px;
+}
+.rounded-circle {
+    border-radius: 50%!important;
+}
+.tags-cloud a {
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    color: #986dbd;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: capitalize;
+    display: inline-block;
+    margin-bottom: 5px;
+    line-height: 27px;
+    border: solid 1px #986dbd;
+}
+.latest-post ol li .rpost-img {
+    float: left;
+    margin-right: 20px;
+    margin-left: 9px;
+    margin-top: 20px;
+    width: 75px;
+    height: 75px;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 搜索样式 */
+.glyphicon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(138,150,164,.15);
+    margin: -5px 0 0 auto;
+    color: #986dbd;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+    -webkit-transition: .25s;
+    transition: .25s;
+    font-family: 'Glyphicons Halflings';
+}
+
+/* katex 样式 */
+.katex { font-size: 0.9em !important; }
+.katex-display > .katex {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* 返回顶部 */
+.rocket{
+  width: 100px;
+  height: 100px;
+  position: fixed; /*设置固定定位*/
+  bottom: 30px;
+  right: 0px;
+  display: none;
+}
+#GoTop {
+    position: fixed;
+    right: 50px;
+    bottom: 68px;
+    background-color: #fafafa;
+    border: 1px solid rgba(0, 0, 0, .07);
+    border-radius: 50%;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    background-clip: padding-box;
+    z-index: 999;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 10px;
+    color: #364149;
+}
+#Gotop:hover,
+#Gotop:active {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+#Gotop.in {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+}
+@media screen and (max-width: 760px) {
+  #Gotop {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+/*top*/
+#scrollTop div {
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 149px;
+	margin: 0;
+	padding: 0
+}
+#scrollTop .level-2 {
+	background: url(../img/rocket_up.png) no-repeat scroll -149px 0 transparent;
+	display: none;
+	height: 250px;
+	opacity: 0;
+	z-index: 1
+}
+#scrollTop .level-3 {
+	background: none repeat scroll 0 0 transparent;
+	cursor: pointer;
+	display: block;
+	height: 150px;
+	z-index: 2
+}
+#scrollTop {
+	background: url(../img/rocket_up.png) no-repeat scroll 0 0 transparent;
+	cursor: default;
+	display: block;
+	height: 250px;
+	overflow: hidden;
+	position: fixed;
+	right: 0;
+	top: 80%;
+	width: 149px;
+	z-index: 11;
+	margin: -125px 0 0;
+	padding: 0
+}
+img.head {
+	max-width: 20px; /* 最大宽度为500px*/
+	width: 20px; /* 图片的大小为500px*/
+ 	width:expression(width>20?"20px":width "px");
+	max-width: 20px; /* 假如图片的尺寸超过550象素,那么就按550象素显示,高度同比例变化;假如图片的尺寸小于550象素,那么就原尺寸显示。在IE6中有效*/
+	height: 20px;
+	overflow: hidden; /* 超出的部分隐藏，避免控制图片大小失败而引起的撑开变形*/
+}
+
+/* 顶部阅读进度条 */
+.top-scroll-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    width: 0;
+    height: 3px;
+    background: #ef3982;
+}

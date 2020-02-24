@@ -1,0 +1,5 @@
+#[[posts]]
+#url = "https://fuckcloudnative.io/posts/understanding-resource-limits-in-kubernetes-cpu-time/"
+#title = "深入理解 Kubernetes 资源限制：CPU"
+#cover = "https://hugo-picture.oss-cn-beijing.aliyuncs.com/blog/2019-06-06-WechatIMG559.jpeg"
+#date = "2018-11-10"

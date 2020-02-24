@@ -1,0 +1,78 @@
+{{ define "main" }}
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10">
+          <div class="well">
+          {{ with .Content }}
+            {{.}}
+	  {{ end }}
+          </div>
+
+        <div class="posts-list">
+          {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+          {{ range $pag.Pages }}
+            {{ partial "post_preview" . }}
+          {{ end }}
+        </div>
+
+        {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+          <ul class="pager main-pager">
+            {{ if .Paginator.HasPrev }}
+              <li class="previous">
+                <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">&larr; {{ i18n "newerPosts" }}</a>
+              </li>
+            {{ end }}
+            {{ if .Paginator.HasNext }}
+              <li class="next">
+                <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/">{{ i18n "olderPosts" }} &rarr;</a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+        <div align="center" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          {{ template "_internal/pagination.html" . }}
+          {{ range .Paginator.Pages }}
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-2">
+        <!-- 个人简介 -->
+        {{ partial "about.html" . }}
+        <!-- 加群 -->
+        {{ partial "join.html" . }}
+        <!-- 热门文章 -->
+        <div class="sidebar-wrap">
+          <div class="sidebar-block latest-post">
+            <h4 class="sidebar-title">热门文章</h4>
+            <ol class="list-unstyled">
+              {{ range .Site.Data.beautifulhugo.hot.posts }}
+              <li>
+                <a href="{{ .url }}">
+                  <div class="rpost-img">
+                    <img src="{{ .cover }}" alt="{{ .title }}" class="img-fluid">
+                  </div>
+		  <strong>{{ .title }}</strong>
+                  <p class="text-muted" style="margin-top:0px;font-size:0.9em">{{ .date }}</p>
+                </a>
+              </li>
+              {{ end }}
+            </ol>
+          </div>
+        </div>
+        <!-- 标签 -->
+        <div class="sidebar-wrap">
+          <h4 class="sidebar-title">标签</h4>
+          <div class="list-unstyled tags-cloud">
+          {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            {{ if gt $taxonomy.Count 1 }}
+            <a href="/tags/{{ $name | urlize }}"><i class="fa fa-tags"></i>{{ $name }}({{ $taxonomy.Count }})</a>
+            {{ end }}
+          {{ end }}
+          </div>
+        </div>
+        <!-- 友情链接 -->
+        {{ partial "friend.html" . }}
+      </div>
+    </div>
+  </div>
+{{ end }}

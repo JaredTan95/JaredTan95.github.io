@@ -1,0 +1,19 @@
+<div class="rocket"><img src="/img/rocket_up.png" alt="" width="100" height="100"></div>
+<script>
+    $(function () {
+      $(window).scroll(function () {
+        //通过判断滚动条Top的滚动距离来决定小火箭的隐藏与显示
+        if ($(window).scrollTop() >= 1000) {
+          $('.rocket').stop().fadeIn(1000);
+        }else {
+          $('.rocket').stop().fadeOut(1000);
+        }
+      })
+      //注册点击事件，来让滚动条回到顶部
+      $('.rocket').click(function () {
+        $('html,body').stop().animate({scrollTop:0},400);
+       // $(window).scrollTop(0);
+      })
+    })
+
+</script>

@@ -1,0 +1,39 @@
+{{ if or .Params.socialShare (and .Site.Params.socialShare (ne .Params.socialShare false)) }}
+<!-- Social Share Button HTML -->
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      <!-- Weibo -->
+      <li>
+	      <a href="//service.weibo.com/share/share.php?url={{ .Permalink }}&amp;title={{ .Title }}&amp;pic={{ .Params.img }}" target="_blank" title="分享到微博">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+      <!-- QQ -->
+      <li>
+	      <a href="//connect.qq.com/widget/shareqq/index.html?url={{ .Permalink }}&amp;title={{ .Title }}&amp;source={{ .Title }}&amp;desc={{ .Params.description }}&amp;pics={{ .Params.img }}&amp;summary={{ .Params.description }}" target="_blank" title="分享到 QQ">
+          <i class="fab fa-qq"></i>
+        </a>
+      </li>
+      <!-- Twitter -->
+      <li>
+        <a href="//twitter.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via={{ .Site.Author.twitter }}" target="_blank" title="分享到 Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      <!-- Facebook -->
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" title="分享到 Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      <!-- LinkedIn -->
+      <li>
+	      <a href="//www.linkedin.com/shareArticle?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank" title="分享到 LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  {{ end }}

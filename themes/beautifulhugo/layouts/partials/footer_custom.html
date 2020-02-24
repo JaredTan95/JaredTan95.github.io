@@ -1,0 +1,68 @@
+<!--
+If you want to include any custom html just before </body>, put it in /layouts/partials/footer_custom.html
+Do not put anything in this file - it's only here so that hugo won't throw an error if /layouts/partials/footer_custom.html doesn't exist.
+-->
+
+{{ partial "go_top.html" . }}
+<!--<script src="{{ "js/prism.js" | absURL }}"></script>-->
+<!--图片懒加载-->
+<!--<script src="{{ "js/jquery.lazyload.min.js" | absURL }}"></script>-->
+<script type="text/javascript">
+      jQuery(function() {
+          jQuery("img").lazyload({threshold: 0,effect: "fadeIn"});
+      });
+</script>
+
+<!--赞赏-->
+<!--<script src="{{ "js/reward.js" | absURL }}"></script>-->
+
+<!--页面预加载-->
+<!--<script src="{{ "js/instant.page.min.js" | absURL }}" type="module"></script>-->
+
+<!--github button-->
+<!--<script src="{{ "js/buttons.js" | absURL }}"></script>-->
+
+<!--顶部阅读进度条-->
+<script type="text/javascript">
+$(document).ready(function () {
+  $(window).scroll(function(){
+    $(".top-scroll-bar").attr("style", "width: " + ($(this).scrollTop() / ($(document).height() - $(this).height()) * 100) + "%; display: block;");
+  });
+})
+</script>
+
+<!-- 鼠标特效 -->
+<script type="text/javascript">
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("Docker", "Kubernetes", "Prometheus", "Envoy", "Istio", "coredns", "Service Mesh", "Cloud Native");
+        var $i = $("<span />").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        function randomColor() {
+          var flakeColor = new Array("#FFDA65", "#00BFFF", "#BA55D3", "#FFA07A", "#87CEEB", "#FFB6C1");
+          var snowColor = flakeColor[Math.floor(flakeColor.length * Math.random())];
+          return snowColor;
+        }
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": randomColor()
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>

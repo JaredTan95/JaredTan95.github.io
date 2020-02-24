@@ -1,0 +1,81 @@
+{{ define "main" }}
+<div class="container" role="main">
+  <div class="row">
+    <div id="container" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      {{ partial "ad.html" . }}
+      <article role="main" class="blog-post">
+	{{ partial "toc.html" . }}
+        {{ $regex := "(?i)src\\s*=\\s*\"([^\"]*(png|jpg|jpeg|gif|bmp|svg))\"" }}
+         {{ $img := findRE $regex .Content }}
+
+         {{ if gt (len $img) 0 }}
+           {{ $replacement := print "src=\"https://hugo-picture.oss-cn-beijing.aliyuncs.com/images/post_loading.gif\" data-original=\"$1\"" }}
+           {{ .Content | replaceRE $regex $replacement | safeHTML }}
+         {{ else }}
+           {{ .Content }}
+         {{ end }}
+	 <!--{{ .Content }}-->
+	 <br />
+	 <div style="text-align:center;color: #ccc;font-size:16px;font-family: cursive;">-------他日江湖相逢 <i class="fa fa-umbrella" style="color:#986dbd"></i> 再当杯酒言欢-------</div>
+         {{ if isset .Site.Params "reward" }}
+           {{ partial "reward.html" . }}
+         {{ end }}
+
+        {{ if .Params.tags }}
+          <div class="blog-tags">
+            {{ range .Params.tags }}
+              <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/"><i class="fa fa-tags"></i>{{ . }}</a>&nbsp;
+            {{ end }}
+          </div>
+        {{ end }}
+
+        {{ if $.Param "socialShare" }}
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                {{ partial "share-links" . }}
+              </div>
+            </section>
+        {{ end }}
+
+        {{ if .Site.Params.showRelatedPosts }}
+          {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+            {{ $.Scratch.Set "has_related" true }}
+          {{ end }}
+
+          {{ if $.Scratch.Get "has_related" }}
+                  <h4 class="see-also">{{ i18n "seeAlso" }}</h4>
+                  <ul>
+                {{ $num_to_show := .Site.Params.related_content_limit | default 5 }}
+                {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+              </ul>
+
+          {{ end }}
+        {{ end }}
+      </article>
+
+      {{ if ne .Type "page" }}
+        <ul class="pager blog-pager">
+          {{ if .PrevInSection }}
+            <li class="previous">
+              <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr; {{ i18n "previousPost" }}</a>
+            </li>
+          {{ end }}
+          {{ if .NextInSection }}
+            <li class="next">
+              <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">{{ i18n "nextPost" }} &rarr;</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+
+      {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }}
+	    {{ partial "disqus-proxy.html" . }}
+      {{ end }}
+
+    </div>
+  </div>
+</div>
+{{ end }}

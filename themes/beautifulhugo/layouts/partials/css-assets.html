@@ -1,0 +1,25 @@
+<!-- Bootstrap Core CSS -->
+{{- $bootcss := resources.Get "css/bootstrap.min.css" -}}
+
+<!-- Theme CSS -->
+{{- $maincss := resources.Get "css/main.css" -}}
+{{- $mycss := resources.Get "css/my.css" -}}
+
+<!-- Custom asset css -->
+{{- $indexScratch := .Scratch -}}
+{{- $indexScratch.Add "cssassets" (slice $bootcss $maincss $mycss) -}}
+{{ if .Site.Params.reward }}
+    {{- $rewardcss := resources.Get "css/reward.css" -}}
+    {{- $indexScratch.Add "cssassets" (slice $rewardcss) -}}
+{{ end }}
+<!--
+{{- range .Site.Params.customCSSAssets -}}
+    {{- $indexScratch.Add "cssassets" (slice (resources.Get .)) -}}
+{{- end -}}
+-->
+
+<!-- Bundle css -->
+{{- $appcss := $indexScratch.Get "cssassets" | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint -}}
+{{- .Scratch.Set "appcss" $appcss.RelPermalink -}}
+{{- .Scratch.Set "appcssintegrity" $appcss.Data.Integrity -}}
+<link rel="stylesheet" href='{{ .Scratch.Get "appcss" }}' integrity='{{ .Scratch.Get "appcssintegrity" }}'>

@@ -1,0 +1,13 @@
+{{ if or .Params.toc (and (gt .WordCount 400 ) (eq .Params.toc "true")) }}
+<aside class="toc">
+    <div id='anchors-navbar'>
+        <i class='fa fa-anchor'></i>
+        {{ .TableOfContents }}
+    </div>
+    <!--
+    <a href="#" id="GoTop">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+    -->
+</aside>
+{{ end }}

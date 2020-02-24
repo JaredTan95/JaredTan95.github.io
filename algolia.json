@@ -1,0 +1,757 @@
+[
+    {
+        "title": "英语学习终极秘诀",
+        "uri": "learn-english",
+        "objectID": "learn-english"
+    },
+    {
+        "title": "About me",
+        "uri": "page/about",
+        "objectID": "page/about"
+    },
+    {
+        "title": "First post!",
+        "uri": "post/2015-01-04-first-post",
+        "objectID": "post/2015-01-04-first-post"
+    },
+    {
+        "title": "Pirates arrrr",
+        "uri": "post/2015-01-15-pirates",
+        "objectID": "post/2015-01-15-pirates"
+    },
+    {
+        "title": "Soccer",
+        "uri": "post/2015-01-19-soccer",
+        "objectID": "post/2015-01-19-soccer"
+    },
+    {
+        "title": "Dear diary",
+        "uri": "post/2015-01-27-dear-diary",
+        "objectID": "post/2015-01-27-dear-diary"
+    },
+    {
+        "title": "To be",
+        "uri": "post/2015-02-13-hamlet-monologue",
+        "objectID": "post/2015-02-13-hamlet-monologue"
+    },
+    {
+        "title": "Test markdown",
+        "uri": "post/2015-02-20-test-markdown",
+        "objectID": "post/2015-02-20-test-markdown"
+    },
+    {
+        "title": "Flake it till you make it",
+        "uri": "post/2015-02-26-flake-it-till-you-make-it",
+        "objectID": "post/2015-02-26-flake-it-till-you-make-it"
+    },
+    {
+        "title": "Math Sample",
+        "uri": "post/2017-03-05-math-sample",
+        "objectID": "post/2017-03-05-math-sample"
+    },
+    {
+        "title": "Big Image Sample",
+        "uri": "post/2017-03-07-bigimg-sample",
+        "objectID": "post/2017-03-07-bigimg-sample"
+    },
+    {
+        "title": "Photoswipe Gallery Sample",
+        "uri": "post/2017-03-20-photoswipe-gallery-sample",
+        "objectID": "post/2017-03-20-photoswipe-gallery-sample"
+    },
+    {
+        "title": "最小二乘法的本质",
+        "uri": "posts/十分钟告诉你什么是最小二乘法",
+        "categories": "math",
+        "objectID": "posts/十分钟告诉你什么是最小二乘法"
+    },
+    {
+        "title": "向量的叉乘与行列式",
+        "uri": "posts/向量的叉乘与行列式",
+        "categories": "math",
+        "objectID": "posts/向量的叉乘与行列式"
+    },
+    {
+        "title": "子空间投影",
+        "uri": "posts/子空间投影",
+        "categories": "math",
+        "objectID": "posts/子空间投影"
+    },
+    {
+        "title": "Kubernetes 控制器的工作原理解读",
+        "uri": "posts/a-deep-dive-into-kubernetes-controllers",
+        "categories": "kubernetes",
+        "objectID": "posts/a-deep-dive-into-kubernetes-controllers"
+    },
+    {
+        "title": "AdGuard Home 安装使用教程",
+        "uri": "posts/adguard-home",
+        "categories": "share",
+        "objectID": "posts/adguard-home"
+    },
+    {
+        "title": "Kubernetes API 扩展",
+        "uri": "posts/api-aggregation",
+        "categories": "kubernetes",
+        "objectID": "posts/api-aggregation"
+    },
+    {
+        "title": "Contour 学习笔记（二）：使用级联功能实现蓝绿部署和金丝雀发布",
+        "uri": "posts/blue-green-deployments-contours-ingressroute",
+        "categories": "kubernetes",
+        "objectID": "posts/blue-green-deployments-contours-ingressroute"
+    },
+    {
+        "title": "calico Router reflection(RR) 模式介绍及部署",
+        "uri": "posts/calico-rr",
+        "categories": "kubernetes",
+        "objectID": "posts/calico-rr"
+    },
+    {
+        "title": "熔断与异常检测在 Istio 中的应用",
+        "uri": "posts/circuit_breaking-and-outlier-detection-in-istio",
+        "categories": "service mesh",
+        "objectID": "posts/circuit_breaking-and-outlier-detection-in-istio"
+    },
+    {
+        "title": "Envoy 基础教程：熔断器的原理和使用",
+        "uri": "posts/circuit-breaking",
+        "categories": "service mesh",
+        "objectID": "posts/circuit-breaking"
+    },
+    {
+        "title": "云原生周报第 1 期",
+        "uri": "posts/cloud-native-weekly-1",
+        "categories": "kubernetes",
+        "objectID": "posts/cloud-native-weekly-1"
+    },
+    {
+        "title": "云原生周报第 2 期",
+        "uri": "posts/cloud-native-weekly-2",
+        "categories": "kubernetes",
+        "objectID": "posts/cloud-native-weekly-2"
+    },
+    {
+        "title": "云原生周报：第 3 期",
+        "uri": "posts/cloud-native-weekly-3",
+        "categories": "kubernetes",
+        "objectID": "posts/cloud-native-weekly-3"
+    },
+    {
+        "title": "并发与并行的区别",
+        "uri": "posts/concurrency-is-not-parallelism",
+        "categories": "linux",
+        "objectID": "posts/concurrency-is-not-parallelism"
+    },
+    {
+        "title": "Istio 中 VirtualService 的注意事项",
+        "uri": "posts/conflictingvirtualservicehost",
+        "categories": "service mesh",
+        "objectID": "posts/conflictingvirtualservicehost"
+    },
+    {
+        "title": "Kubernetes 中的容器运行时",
+        "uri": "posts/container-runtime",
+        "categories": "kubernetes",
+        "objectID": "posts/container-runtime"
+    },
+    {
+        "title": "使用 Docker 和 Jenkins 持续交付",
+        "uri": "posts/continuous-delivery-with-docker-jenkins-2nd-edition",
+        "categories": "devops",
+        "objectID": "posts/continuous-delivery-with-docker-jenkins-2nd-edition"
+    },
+    {
+        "title": "控制 Egress 流量",
+        "uri": "posts/control-egress-traffic",
+        "categories": "service mesh",
+        "objectID": "posts/control-egress-traffic"
+    },
+    {
+        "title": "Kubernetes 控制器的进化之旅",
+        "uri": "posts/controllers-confession",
+        "categories": "kubernetes",
+        "objectID": "posts/controllers-confession"
+    },
+    {
+        "title": "CRI-O 简介",
+        "uri": "posts/cri-o",
+        "categories": "kubernetes",
+        "objectID": "posts/cri-o"
+    },
+    {
+        "title": "使用自定义指标进行弹性伸缩",
+        "uri": "posts/custom-metrics-hpa",
+        "categories": "kubernetes",
+        "objectID": "posts/custom-metrics-hpa"
+    },
+    {
+        "title": "Device Mapper系列基础教程：Device Mapper 的原理",
+        "uri": "posts/devicemapper-theory",
+        "categories": "docker",
+        "objectID": "posts/devicemapper-theory"
+    },
+    {
+        "title": "Istio 的高级边缘流量控制（一）",
+        "uri": "posts/egress-gateway-1",
+        "categories": "service mesh",
+        "objectID": "posts/egress-gateway-1"
+    },
+    {
+        "title": "Istio 的高级边缘流量控制（二）",
+        "uri": "posts/egress-gateway-2",
+        "categories": "service mesh",
+        "objectID": "posts/egress-gateway-2"
+    },
+    {
+        "title": "在服务网格内部调用外部 Web 服务",
+        "uri": "posts/egress-https",
+        "categories": "service mesh",
+        "objectID": "posts/egress-https"
+    },
+    {
+        "title": "在服务网格内部调用外部 TCP 服务",
+        "uri": "posts/egress-tcp",
+        "categories": "service mesh",
+        "objectID": "posts/egress-tcp"
+    },
+    {
+        "title": "Istio 出口流量的 TLS",
+        "uri": "posts/egress-tls-origination",
+        "categories": "service mesh",
+        "objectID": "posts/egress-tls-origination"
+    },
+    {
+        "title": "使用 envoy-docker-shim 替代 docker-proxy",
+        "uri": "posts/envoy-docker-shim",
+        "categories": "docker",
+        "objectID": "posts/envoy-docker-shim"
+    },
+    {
+        "title": "Envoy 基础教程：xDS REST 和 gRPC 协议详解",
+        "uri": "posts/envoy-xds-protocol",
+        "categories": "service mesh",
+        "objectID": "posts/envoy-xds-protocol"
+    },
+    {
+        "title": "etcd 集群大小迷思",
+        "uri": "posts/etcd-cluster-number",
+        "categories": "kubernetes",
+        "objectID": "posts/etcd-cluster-number"
+    },
+    {
+        "title": "Etcd 的分布式一致性详解",
+        "uri": "posts/etcd-server-learner",
+        "categories": "kubernetes",
+        "objectID": "posts/etcd-server-learner"
+    },
+    {
+        "title": "暴露 Istio Service Mesh 中的 Gateway",
+        "uri": "posts/expose-gateway-of-istio",
+        "categories": "service mesh",
+        "objectID": "posts/expose-gateway-of-istio"
+    },
+    {
+        "title": "Envoy 基础教程：扩展 Envoy 的管理界面",
+        "uri": "posts/extending-the-envoy-admin-interface",
+        "categories": "service mesh",
+        "objectID": "posts/extending-the-envoy-admin-interface"
+    },
+    {
+        "title": "Kubernetes 使用集群联邦实现多集群管理",
+        "uri": "posts/federation",
+        "categories": "kubernetes",
+        "objectID": "posts/federation"
+    },
+    {
+        "title": "Envoy 基础教程：基于文件系统动态更新配置",
+        "uri": "posts/file-based-dynamic-routing-configuration",
+        "categories": "service mesh",
+        "objectID": "posts/file-based-dynamic-routing-configuration"
+    },
+    {
+        "title": "使用 font-spider 对 webfont 网页字体进行压缩",
+        "uri": "posts/font-spider-plus",
+        "categories": "hugo",
+        "objectID": "posts/font-spider-plus"
+    },
+    {
+        "title": "Grafana 6.4 正式发布！",
+        "uri": "posts/grafana-v6.4-released",
+        "categories": "monitoring",
+        "objectID": "posts/grafana-v6.4-released"
+    },
+    {
+        "title": "docker 在本地如何管理 image（镜像）?",
+        "uri": "posts/how-manage-image",
+        "categories": "docker",
+        "objectID": "posts/how-manage-image"
+    },
+    {
+        "title": "CPU 使用率 100% 的解决办法",
+        "uri": "posts/how-to-deal-with-increasing-of-cpu-usage",
+        "categories": "Linux",
+        "objectID": "posts/how-to-deal-with-increasing-of-cpu-usage"
+    },
+    {
+        "title": "Hugo 添加站点统计信息",
+        "uri": "posts/hugo-add-busuanzi",
+        "categories": "hugo",
+        "objectID": "posts/hugo-add-busuanzi"
+    },
+    {
+        "title": "Hugo 集成社交分享插件",
+        "uri": "posts/hugo-social-share-plugin",
+        "categories": "hugo",
+        "objectID": "posts/hugo-social-share-plugin"
+    },
+    {
+        "title": "通过消除对特权容器的需求来提高 Istio Deployment 的安全性",
+        "uri": "posts/increasing-security-of-istio-deployments",
+        "categories": "service mesh",
+        "objectID": "posts/increasing-security-of-istio-deployments"
+    },
+    {
+        "title": "Envoy 基础教程：实现增量部署",
+        "uri": "posts/incremental-deploys",
+        "categories": "service mesh",
+        "objectID": "posts/incremental-deploys"
+    },
+    {
+        "title": "使用 CoreDNS 来应对 DNS 污染",
+        "uri": "posts/install-coredns-on-macos",
+        "categories": "gfw",
+        "objectID": "posts/install-coredns-on-macos"
+    },
+    {
+        "title": "Envoy 基础教程：集成服务发现",
+        "uri": "posts/integrating-service-discovery-with-envoy",
+        "categories": "service mesh",
+        "objectID": "posts/integrating-service-discovery-with-envoy"
+    },
+    {
+        "title": "你确定你会写 Dockerfile 吗？",
+        "uri": "posts/intro-guide-to-dockerfile-best-practices",
+        "categories": "Docker",
+        "objectID": "posts/intro-guide-to-dockerfile-best-practices"
+    },
+    {
+        "title": "Descheduler 使用指南",
+        "uri": "posts/introduce-kubernetes-descheduler",
+        "categories": "kubernetes",
+        "objectID": "posts/introduce-kubernetes-descheduler"
+    },
+    {
+        "title": "Linux Namespace 基础教程：namespace API",
+        "uri": "posts/introduction-to-linux-namespaces-part-1-api",
+        "categories": "linux",
+        "objectID": "posts/introduction-to-linux-namespaces-part-1-api"
+    },
+    {
+        "title": "Istio 1.0 部署",
+        "uri": "posts/istio-1.0-deploy",
+        "categories": "service mesh",
+        "objectID": "posts/istio-1.0-deploy"
+    },
+    {
+        "title": "手把手教你部署 Istio 1.3",
+        "uri": "posts/istio-1.3-tour",
+        "categories": "service mesh",
+        "objectID": "posts/istio-1.3-tour"
+    },
+    {
+        "title": "Istio 1.3 发布，HTTP 遥测不再需要 Mixer",
+        "uri": "posts/istio-1.3",
+        "categories": "service mesh",
+        "objectID": "posts/istio-1.3"
+    },
+    {
+        "title": "Istio 1.4 部署指南",
+        "uri": "posts/istio-deploy",
+        "categories": "service mesh",
+        "objectID": "posts/istio-deploy"
+    },
+    {
+        "title": "Istio 服务网格中的网关",
+        "uri": "posts/istio-ingress",
+        "categories": "service mesh",
+        "objectID": "posts/istio-ingress"
+    },
+    {
+        "title": "在 Istio 中调试 503 错误",
+        "uri": "posts/istio-mtls-debugging-a-503-error",
+        "categories": "service mesh",
+        "objectID": "posts/istio-mtls-debugging-a-503-error"
+    },
+    {
+        "title": "Istio 流量管理实现机制深度解析",
+        "uri": "posts/istio-traffic-management-impl-intro",
+        "categories": "service mesh",
+        "objectID": "posts/istio-traffic-management-impl-intro"
+    },
+    {
+        "title": "Istio 流量管理",
+        "uri": "posts/istio-traffic-management",
+        "categories": "service mesh",
+        "objectID": "posts/istio-traffic-management"
+    },
+    {
+        "title": "Kubernetes 网络扩展",
+        "uri": "posts/k8s-network-expand",
+        "categories": "kubernetes",
+        "objectID": "posts/k8s-network-expand"
+    },
+    {
+        "title": "当 kube-proxy 遇到连接重置",
+        "uri": "posts/kube-proxy-subtleties-debugging-an-intermittent-connection-reset",
+        "categories": "kubernetes",
+        "objectID": "posts/kube-proxy-subtleties-debugging-an-intermittent-connection-reset"
+    },
+    {
+        "title": "Kube-router 使用指南",
+        "uri": "posts/kube-router",
+        "categories": "kubernetes",
+        "objectID": "posts/kube-router"
+    },
+    {
+        "title": "Kubeman 使用指南",
+        "uri": "posts/kubeman",
+        "categories": "kubernetes",
+        "objectID": "posts/kubeman"
+    },
+    {
+        "title": "KubeRBS 助力 Kubernetes 自动回滚，让你晚上睡得更香",
+        "uri": "posts/kuberbs-for-automatic-kubernetes-rollbacks-so-you-can-sleep-better-at-night",
+        "categories": "kubernetes",
+        "objectID": "posts/kuberbs-for-automatic-kubernetes-rollbacks-so-you-can-sleep-better-at-night"
+    },
+    {
+        "title": "深入理解 Kubernetes API Server（一）",
+        "uri": "posts/kubernetes-api-server-part-1",
+        "categories": "kubernetes",
+        "objectID": "posts/kubernetes-api-server-part-1"
+    },
+    {
+        "title": "Kubernetes 设计与开发原则",
+        "uri": "posts/kubernetes-design-and-development-explained",
+        "categories": "kubernetes",
+        "objectID": "posts/kubernetes-design-and-development-explained"
+    },
+    {
+        "title": "Kubernetes DNS 高阶指南",
+        "uri": "posts/kubernetes-dns",
+        "categories": "kubernetes",
+        "objectID": "posts/kubernetes-dns"
+    },
+    {
+        "title": "Kubernetes Pod 驱逐详解",
+        "uri": "posts/kubernetes-eviction",
+        "categories": "kubernetes",
+        "objectID": "posts/kubernetes-eviction"
+    },
+    {
+        "title": "Kubernetes 准入控制介绍",
+        "uri": "posts/kubernetes-extensible-admission",
+        "categories": "kubernetes",
+        "objectID": "posts/kubernetes-extensible-admission"
+    },
+    {
+        "title": " 修复 Service Endpoint 更新的延迟",
+        "uri": "posts/kubernetes-fixing-delayed-service-endpoint-updates",
+        "categories": "kubernetes",
+        "objectID": "posts/kubernetes-fixing-delayed-service-endpoint-updates"
+    },
+    {
+        "title": "Kubernetes 的奇技淫巧",
+        "uri": "posts/kubernetes-fucking-trick",
+        "categories": "kubernetes",
+        "objectID": "posts/kubernetes-fucking-trick"
+    },
+    {
+        "title": "Kubernetes 资源管理概述",
+        "uri": "posts/kubernetes-resource-management",
+        "categories": "kubernetes",
+        "objectID": "posts/kubernetes-resource-management"
+    },
+    {
+        "title": "在 Kubernetes 中实现零宕机部署应用",
+        "uri": "posts/kubernetes-zero-downtime-deployment",
+        "categories": "kubernetes",
+        "objectID": "posts/kubernetes-zero-downtime-deployment"
+    },
+    {
+        "title": "KubeSphere 安装教程",
+        "uri": "posts/kubesphere",
+        "categories": "kubernetes",
+        "objectID": "posts/kubesphere"
+    },
+    {
+        "title": "数据包在 Istio 网格中的生命周期",
+        "uri": "posts/life-of-a-packet-through-istio",
+        "categories": "service mesh",
+        "objectID": "posts/life-of-a-packet-through-istio"
+    },
+    {
+        "title": "Linux Capabilities 入门教程：基础实战篇",
+        "uri": "posts/linux-capabilities-in-practice-1",
+        "categories": "linux",
+        "objectID": "posts/linux-capabilities-in-practice-1"
+    },
+    {
+        "title": "Linux Capabilities 入门教程：概念篇",
+        "uri": "posts/linux-capabilities-why-they-exist-and-how-they-work",
+        "categories": "linux",
+        "objectID": "posts/linux-capabilities-why-they-exist-and-how-they-work"
+    },
+    {
+        "title": "Linux全局智能分流方案",
+        "uri": "posts/linux-circumvent",
+        "categories": "gfw",
+        "objectID": "posts/linux-circumvent"
+    },
+    {
+        "title": "LVS负载均衡之持久性连接介绍",
+        "uri": "posts/lvs-persistent-connection",
+        "categories": "loadbalance",
+        "objectID": "posts/lvs-persistent-connection"
+    },
+    {
+        "title": "Macvlan 网络方案实践",
+        "uri": "posts/macvlan-in-action",
+        "categories": "network",
+        "objectID": "posts/macvlan-in-action"
+    },
+    {
+        "title": "理解矩阵乘法",
+        "uri": "posts/matrix-multiplication",
+        "categories": "math",
+        "objectID": "posts/matrix-multiplication"
+    },
+    {
+        "title": "Kubernetes 内存资源限制实战",
+        "uri": "posts/memory-limit-of-pod-and-oom-killer",
+        "categories": "kubernetes",
+        "objectID": "posts/memory-limit-of-pod-and-oom-killer"
+    },
+    {
+        "title": "Envoy 基础教程：从 Nginx 迁移到 Envoy Proxy",
+        "uri": "posts/migrating-from-nginx-to-envoy",
+        "categories": "service-mesh",
+        "objectID": "posts/migrating-from-nginx-to-envoy"
+    },
+    {
+        "title": "使用 buildx 构建多平台 Docker 镜像",
+        "uri": "posts/multiarch-docker-with-buildx",
+        "categories": "Docker",
+        "objectID": "posts/multiarch-docker-with-buildx"
+    },
+    {
+        "title": "Linux 虚拟网卡技术：Macvlan",
+        "uri": "posts/netwnetwork-virtualization-macvlan",
+        "categories": "network",
+        "objectID": "posts/netwnetwork-virtualization-macvlan"
+    },
+    {
+        "title": "Nginx 流量镜像使用技巧",
+        "uri": "posts/nginx-mirror",
+        "categories": "loadbalance",
+        "objectID": "posts/nginx-mirror"
+    },
+    {
+        "title": "优化生产环境中的 Kubernetes 资源分配",
+        "uri": "posts/optimizing-kubernetes-resource-allocation-production",
+        "categories": "kubernetes",
+        "objectID": "posts/optimizing-kubernetes-resource-allocation-production"
+    },
+    {
+        "title": "Podman 使用指南",
+        "uri": "posts/podman-sidecar",
+        "categories": "docker",
+        "objectID": "posts/podman-sidecar"
+    },
+    {
+        "title": "Kubernetes 中 Pod 的生命周期管理",
+        "uri": "posts/pods-life",
+        "categories": "kubernetes",
+        "objectID": "posts/pods-life"
+    },
+    {
+        "title": "Calico 网络通信原理揭秘",
+        "uri": "posts/poke-calicos-lies",
+        "categories": "network",
+        "objectID": "posts/poke-calicos-lies"
+    },
+    {
+        "title": "一文搞懂 Prometheus 的直方图",
+        "uri": "posts/prometheus-histograms",
+        "categories": "monitoring",
+        "objectID": "posts/prometheus-histograms"
+    },
+    {
+        "title": "Envoy 基础教程：HTTP 路由解析",
+        "uri": "posts/routing-basics",
+        "categories": "service-mesh",
+        "objectID": "posts/routing-basics"
+    },
+    {
+        "title": "Envoy 基础教程：通过控制平面提供路由",
+        "uri": "posts/routing-with-a-control-plane",
+        "categories": "service mesh",
+        "objectID": "posts/routing-with-a-control-plane"
+    },
+    {
+        "title": "Envoy 基础教程：入门篇",
+        "uri": "posts/run-envoy-on-your-laptop",
+        "categories": "service-mesh",
+        "objectID": "posts/run-envoy-on-your-laptop"
+    },
+    {
+        "title": "kubernetes 高可用部署工具：sealos",
+        "uri": "posts/sealos",
+        "categories": "kubernetes",
+        "objectID": "posts/sealos"
+    },
+    {
+        "title": "了解如何在服务网格中进行性能测试",
+        "uri": "posts/service-mesh-performance-testing",
+        "categories": "service mesh",
+        "objectID": "posts/service-mesh-performance-testing"
+    },
+    {
+        "title": "Envoy 基础教程：开启 TLS 验证实战",
+        "uri": "posts/setting-up-ssl-in-envoy-practice",
+        "categories": "service mesh",
+        "objectID": "posts/setting-up-ssl-in-envoy-practice"
+    },
+    {
+        "title": "Envoy 基础教程：启用证书验证",
+        "uri": "posts/setting-up-ssl-in-envoy",
+        "categories": "service mesh",
+        "objectID": "posts/setting-up-ssl-in-envoy"
+    },
+    {
+        "title": "Envoy 基础教程：对应用进行速率限制",
+        "uri": "posts/sre-resiliency-bolt-on-sidecar-rate-limiting-with-envoy-sidecar",
+        "categories": "service mesh",
+        "objectID": "posts/sre-resiliency-bolt-on-sidecar-rate-limiting-with-envoy-sidecar"
+    },
+    {
+        "title": "Tcpdump 示例教程",
+        "uri": "posts/tcpdump-examples",
+        "categories": "network",
+        "objectID": "posts/tcpdump-examples"
+    },
+    {
+        "title": "Kubernetes 设计哲学",
+        "uri": "posts/the-mechanics-of-kubernetes",
+        "categories": "kubernetes",
+        "objectID": "posts/the-mechanics-of-kubernetes"
+    },
+    {
+        "title": "Device Mapper系列基础教程：Thin Provisioning 实践",
+        "uri": "posts/thin-provisioning",
+        "categories": "docker",
+        "objectID": "posts/thin-provisioning"
+    },
+    {
+        "title": "Kubernetes RBAC 策略审计指南",
+        "uri": "posts/tools-and-methods-for-auditing-kubernetes-rbac-policies",
+        "categories": "kubernetes",
+        "objectID": "posts/tools-and-methods-for-auditing-kubernetes-rbac-policies"
+    },
+    {
+        "title": "Linux Cgroup 入门教程：基本概念",
+        "uri": "posts/understanding-cgroups-part-1-basics",
+        "categories": "linux",
+        "objectID": "posts/understanding-cgroups-part-1-basics"
+    },
+    {
+        "title": "Linux Cgroup 入门教程：CPU",
+        "uri": "posts/understanding-cgroups-part-2-cpu",
+        "categories": "linux",
+        "objectID": "posts/understanding-cgroups-part-2-cpu"
+    },
+    {
+        "title": "Linux Cgroup 入门教程：内存",
+        "uri": "posts/understanding-cgroups-part-3-memory",
+        "categories": "linux",
+        "objectID": "posts/understanding-cgroups-part-3-memory"
+    },
+    {
+        "title": "深入理解 Kubernetes 资源限制：CPU",
+        "uri": "posts/understanding-resource-limits-in-kubernetes-cpu-time",
+        "categories": "kubernetes",
+        "objectID": "posts/understanding-resource-limits-in-kubernetes-cpu-time"
+    },
+    {
+        "title": "深入理解 Kubelet 中的 PLEG is not healthy",
+        "uri": "posts/understanding-the-pleg-is-not-healthy",
+        "categories": "kubernetes",
+        "objectID": "posts/understanding-the-pleg-is-not-healthy"
+    },
+    {
+        "title": "Device Mapper基础教程：Docker 中使用 devicemapper 存储驱动",
+        "uri": "posts/use-devicemapper",
+        "categories": "docker",
+        "objectID": "posts/use-devicemapper"
+    },
+    {
+        "title": "Contour 学习笔记（一）：使用 Contour 接管 Kubernetes 的南北流量",
+        "uri": "posts/use-envoy-as-a-kubernetes-ingress",
+        "categories": "kubernetes",
+        "objectID": "posts/use-envoy-as-a-kubernetes-ingress"
+    },
+    {
+        "title": "Envoy 基础教程：反向代理谷歌搜索",
+        "uri": "posts/use-envoy-proxy-access-google",
+        "categories": "service mesh",
+        "objectID": "posts/use-envoy-proxy-access-google"
+    },
+    {
+        "title": "nftables 基础教程：使用 nftables 作为防火墙",
+        "uri": "posts/use-nftables-as-firewall",
+        "categories": "linux",
+        "objectID": "posts/use-nftables-as-firewall"
+    },
+    {
+        "title": "nftables 使用教程",
+        "uri": "posts/using-nftables",
+        "categories": "linux",
+        "objectID": "posts/using-nftables"
+    },
+    {
+        "title": "Vistio—使用 Netflix 的 Vizceral 可视化 Istio service mesh",
+        "uri": "posts/vistio-visualize-your-istio-mesh-using-netflixs-vizceral",
+        "categories": "service mesh",
+        "objectID": "posts/vistio-visualize-your-istio-mesh-using-netflixs-vizceral"
+    },
+    {
+        "title": "kubectl 创建 Pod 背后到底发生了什么？",
+        "uri": "posts/what-happens-when-k8s",
+        "categories": "kubernetes",
+        "objectID": "posts/what-happens-when-k8s"
+    },
+    {
+        "title": "Kubernetes 1.15 详细介绍",
+        "uri": "posts/whats-new-kubernetes-1-15",
+        "categories": "kubernetes",
+        "objectID": "posts/whats-new-kubernetes-1-15"
+    },
+    {
+        "title": "数据包在 Istio 网格中的生命周期（上）",
+        "uri": "posts/where-is-the-request-1",
+        "categories": "service mesh",
+        "objectID": "posts/where-is-the-request-1"
+    },
+    {
+        "title": "数据包在 Istio 网格中的生命周期（下）",
+        "uri": "posts/where-is-the-request-2",
+        "categories": "service mesh",
+        "objectID": "posts/where-is-the-request-2"
+    },
+    {
+        "title": "Prometheus 中文文档",
+        "uri": "prometheus-handbook",
+        "objectID": "prometheus-handbook"
+    }
+]

@@ -1,0 +1,180 @@
+baseurl = "https://jaredtan95.github.io"
+languageCode = "en-us"
+DefaultContentLanguage = "zh"
+title = "抠腚Coding笔记"
+theme = ["hugo-notice", "beautifulhugo"]
+publishdir = ""
+metaDataFormat = "yaml"
+# 统计中文字数
+hasCJKLanguage = true
+# 把 url 中的大写字符转为小写
+disablePathToLower = false
+# 把分类（categories）名称转为小写
+preserveTaxonomyNames = false
+# 取消默认的代码高亮，我们使用prism代码高亮
+pygmentsUseClasses = false
+# 分页
+Paginate = 4
+# 启用 Emoji; see emoji-cheat-sheet.com
+enableEmoji = true
+# 创建robots.txt
+enableRobotsTXT = true
+googleAnalytics = "UA-145022311-1"
+#pygmentCodeFences = false 
+#pygmentsCodefencesGuessSyntax = false
+#disqusShortname = 'fuckcloudnative'
+
+[Blackfriday]
+  # 是否在新标签页打开链接
+  hrefTargetBlank = true
+
+[Params]
+  homeTitle = "Hi,我是谭建" # Set a different text for the header on the home page
+  #titleicon = '<i class="fab fa-java"></i>'
+  #subtitle = "...subtitle...."
+  keywords = "java、微服务、OpenTracing、OpenTelementry、APM、docker、kubernetes、istio、devops、hugo、golang、云原生"
+  description = "description"
+  mainSections = ["posts"]
+  logo = "http://q67bf0oit.bkt.clouddn.com/blog/photo.jpeg" # Expecting square dimensions
+  favicon = "https://hugo-picture.oss-cn-beijing.aliyuncs.com/favicon-32x32.png"
+  dateFormat = "2006 年 1 月 2 日"
+  commit = false
+  rss = true
+  comments = true 
+  readingTime = true
+  wordCount = true
+  useHLJS = false
+  selfHosted = true 
+  socialShare = true
+  #delayDisqus = true
+  showRelatedPosts = true
+  # busuanzi
+  busuanzi = true
+  busuanzi_site_offset = 100000 
+  reward = true
+  customCSSAssets = ["fontawesome/css/all.css", "css/fonts.css", "css/fonts-zh.css", "css/prism.css", "css/toc.css", "css/pace.css", "css/search.css"]
+  customJSAssets = ["js/prism.js", "js/prism-copy-to-clipboard.min.js", "js/prism-match-braces.min.js", "js/photoswipe.min.js", "js/photoswipe-ui-default.min.js", "js/jquery.lazyload.min.js", "js/instant.page.min.js", "js/buttons.js"]
+  algolia = "62fd06bd949abb4211bfab0aa288f67b" # API key
+#  hideAuthor = true
+  # gcse = "014738201351737010393:0qb0mkrjow4" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+
+[[Params.bigimg]]
+src = "http://q67bf0oit.bkt.clouddn.com/blog/WechatIMG63.jpeg"
+desc = "Things should be simple"
+position = "center top"
+
+[[Params.bigimg]]
+src = "http://q67bf0oit.bkt.clouddn.com/blog/WechatIMG62.jpeg"
+desc = "Just Beginning"
+position = "center top"
+
+#[[Params.bigimg]]
+#  src = "img/triangle.jpg"
+#  desc = "Triangle"
+#[[Params.bigimg]]
+#  src = "img/sphere.jpg"
+#  desc = "Sphere"
+#  # position: see values of CSS background-position.
+#  position = "center top"
+#[[Params.bigimg]]
+#  src = "img/hexagon.jpg"
+#  desc = "Hexagon"
+
+[Author]
+  name = "Jared.Tan"
+  website = "https://jaredtan95.github.io"
+  weixin = "http://q67bf0oit.bkt.clouddn.com/blog/WechatQR.jpeg"
+  #weibo = "3496206342"
+  email = "tanjian@apache.org"
+  #facebook = "username"
+  github = "JaredTan95"
+  #gdrive = "0By_W-zIhlMXqSGJyU3pHaVVpV2M"
+  #gitlab = "username"
+  #bitbucket = "username"
+  #twitter = "RyangYang1"
+  #reddit = "username"
+  #linkedin = "yang-ryan-b6659b106"
+  #xing = "username"
+  #stackoverflow = "users/XXXXXXX/username"
+  #snapchat = "username"
+  #instagram = "username"
+  #youtube = "user/username" # or channel/channelname
+  #soundcloud = "username"
+  #spotify = "username"
+  #bandcamp = "username"
+  #itchio = "username"
+  #vk = "username"
+  #paypal = "username"
+  #telegram = "username"
+  #500px = "username"
+  #codepen = "username"
+  #mastodon = "url"
+  #kaggle = "username"
+  #weibo = "username"
+  #slack = "username"
+
+[[menu.main]]
+    identifier = "Categories"
+    pre = '<i class="fas fa-dharmachakra fa-spin" style="color:#986dbd"></i>'
+    name = "文章分类"
+    weight = 1
+
+[[menu.main]]
+    parent = "Categories"
+    name = "Java"
+    url = "categories/Java/"
+    weight = 1
+
+[[menu.main]]
+    parent = "Categories"
+    name = "SpringCloud"
+    url = "categories/SpringCloud/"
+    weight = 2
+
+[[menu.main]]
+    parent = "Categories"
+    name = "kubernetes"
+    url = "categories/kubernetes/"
+    weight = 3
+
+[[menu.main]]
+    parent = "Categories"
+    name = "Service Mesh"
+    url = "categories/service-mesh/"
+    weight = 4
+
+[[menu.main]]
+    parent = "Categories"
+    name = "DevOps"
+    url = "categories/devops/"
+    weight = 5
+
+[[menu.main]]
+    parent = "Categories"
+    name = "Docker"
+    url = "categories/docker/"
+    weight = 6
+
+[[menu.main]]
+    parent = "Categories"
+    name = "Linux"
+    url = "categories/linux/"
+    weight = 7
+
+[[menu.main]]
+    identifier = "Books"
+    pre = '<i class="fab fa-book"></i>'
+    name = "电子书Hub"
+    weight = 2
+
+[[menu.main]]
+    parent = "Books"
+    name = "Skywalking Handbook"
+    url = "https://skywalking-handbook.netlify.com/"
+    weight = 1
+
+[[menu.main]]
+    parent = "Books"
+    name = "Istio service mesh"
+    url = "https://istio.io/zh/docs"
+    weight = 2
