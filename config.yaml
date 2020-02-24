@@ -1,5 +1,5 @@
 ---
-baseurl: "/"
+baseurl: "https://jaredtan95.github.io"
 DefaultContentLanguage: "zh-cn"
 hasCJKLanguage: true
 languageCode: "zh-cn"
