@@ -30,7 +30,7 @@ googleAnalytics = "UA-145022311-1"
 
 [Params]
   homeTitle = "Hi,我是谭建" # Set a different text for the header on the home page
-  #titleicon = '<i class="fab fa-java"></i>'
+  titleicon = '<i class="fab fa-dev"></i>'
   #subtitle = "...subtitle...."
   keywords = "Java、微服务、OpenTracing、OpenTelementry、APM、docker、kubernetes、istio、devops、hugo、golang、云原生"
   description = "description"
@@ -157,9 +157,15 @@ position = "center top"
 
 [[menu.main]]
     parent = "Categories"
+    name = "Hugo"
+    url = "categories/hugo/"
+    weight = 7
+
+[[menu.main]]
+    parent = "Categories"
     name = "Linux"
     url = "categories/linux/"
-    weight = 7
+    weight = 8
 
 [[menu.main]]
     identifier = "Books"
