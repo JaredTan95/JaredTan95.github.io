@@ -122,13 +122,13 @@ position = "center top"
 [[menu.main]]
     parent = "Categories"
     name = "Java"
-    url = "categories/Java/"
+    url = "categories/java/"
     weight = 1
 
 [[menu.main]]
     parent = "Categories"
     name = "SpringCloud"
-    url = "categories/SpringCloud/"
+    url = "categories/springcloud/"
     weight = 2
 
 [[menu.main]]
@@ -140,7 +140,7 @@ position = "center top"
 [[menu.main]]
     parent = "Categories"
     name = "Service Mesh"
-    url = "categories/service-mesh/"
+    url = "categories/servicemesh/"
     weight = 4
 
 [[menu.main]]
@@ -175,8 +175,8 @@ position = "center top"
 
 [[menu.main]]
     parent = "Books"
-    name = "Skywalking Handbook"
-    url = "https://skywalking-handbook.netlify.com/"
+    name = "无责任分享"
+    url = "#"
     weight = 1
 
 [[menu.main]]
@@ -184,3 +184,9 @@ position = "center top"
     name = "Istio service mesh"
     url = "https://istio.io/zh/docs"
     weight = 2
+
+[[menu.main]]
+    parent = "Books"
+    name = "Istio service mesh"
+    url = "https://istio.io/zh/docs"
+    weight = 3

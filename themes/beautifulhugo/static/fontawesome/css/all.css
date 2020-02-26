@@ -29,6 +29,17 @@
     height: 43px;
     margin-top: -4px;
 }
+
+.fa-segmentfault {
+    background: url(/css/images/fa-segmentfault.png) center no-repeat #f8f9fa;
+    -webkit-background-size: 82%;
+    -moz-background-size: 82%;
+    background-size: 82%;
+    width: 43px;
+    height: 43px;
+    margin-top: -4px;
+}
+
 .fa-bokeyuan {
     background: url(/css/images/fa-bokeyuan.png) center no-repeat #f8f9fa;
     -webkit-background-size: 82%;
