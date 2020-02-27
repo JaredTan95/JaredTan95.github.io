@@ -59,12 +59,17 @@ googleAnalytics = "UA-145022311-1"
   # gcse = "014738201351737010393:0qb0mkrjow4" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 [[Params.bigimg]]
-src = "http://q67bf0oit.bkt.clouddn.com/blog/WechatIMG63.jpeg"
-desc = "Things should be simple"
+src = "http://q67bf0oit.bkt.clouddn.com/blog/micro-img.jpeg"
+desc = ""
 position = "center top"
 
 [[Params.bigimg]]
-src = "http://q67bf0oit.bkt.clouddn.com/blog/WechatIMG62.jpeg"
+src = "http://q67bf0oit.bkt.clouddn.com/blog/WechatIMG77.jpeg"
+desc = "Data Archi"
+position = "center top"
+
+[[Params.bigimg]]
+src = "http://q67bf0oit.bkt.clouddn.com/blog/micro-img-02.jpeg"
 desc = "Just Beginning"
 position = "center top"
 
