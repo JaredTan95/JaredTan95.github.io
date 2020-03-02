@@ -7,5 +7,9 @@ description:
 date: {{ .Date }}
 draft: false
 toc: true
+categories: ""
+tags: []
+img: ""
+bigimg: [{src: "", desc: ""}]
 ---
 

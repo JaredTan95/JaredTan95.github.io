@@ -19,10 +19,12 @@ Paginate = 4
 enableEmoji = true
 # 创建robots.txt
 enableRobotsTXT = true
-googleAnalytics = "UA-145022311-1"
+googleAnalytics = "UA-159351035-1"
 #pygmentCodeFences = false 
 #pygmentsCodefencesGuessSyntax = false
 #disqusShortname = 'fuckcloudnative'
+
+enableGitInfo = true
 
 [Blackfriday]
   # 是否在新标签页打开链接
@@ -38,7 +40,8 @@ googleAnalytics = "UA-145022311-1"
   logo = "http://q67bf0oit.bkt.clouddn.com/blog/photo.jpeg" # Expecting square dimensions
   favicon = "https://hugo-picture.oss-cn-beijing.aliyuncs.com/favicon-32x32.png"
   dateFormat = "2006 年 1 月 2 日"
-  commit = false
+  #commit = false
+  commit = "https://github.com/JaredTan95/JaredTan95.github.io.source/tree/"
   rss = true
   comments = true 
   readingTime = true
@@ -54,7 +57,7 @@ googleAnalytics = "UA-145022311-1"
   reward = true
   customCSSAssets = ["fontawesome/css/all.css", "css/fonts.css", "css/fonts-zh.css", "css/prism.css", "css/toc.css", "css/pace.css", "css/search.css"]
   customJSAssets = ["js/prism.js", "js/prism-copy-to-clipboard.min.js", "js/prism-match-braces.min.js", "js/photoswipe.min.js", "js/photoswipe-ui-default.min.js", "js/jquery.lazyload.min.js", "js/instant.page.min.js", "js/buttons.js"]
-  algolia = "62fd06bd949abb4211bfab0aa288f67b" # API key
+  algolia = "32e3e1294df2f152c5e769eac44b32dd" # API key
 #  hideAuthor = true
   # gcse = "014738201351737010393:0qb0mkrjow4" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
@@ -136,41 +139,48 @@ position = "center top"
     url = "categories/springcloud/"
     weight = 2
 
+ [[menu.main]]
+    parent = "Categories"
+    name = "APM"
+    url = "categories/apm/"
+    weight = 3
+   
+[[menu.main]]
+    parent = "Categories"
+    name = "中间件"
+    url = "categories/middleware/"
+    weight = 4
+
 [[menu.main]]
     parent = "Categories"
     name = "kubernetes"
     url = "categories/kubernetes/"
-    weight = 3
+    weight = 5
 
 [[menu.main]]
     parent = "Categories"
     name = "Service Mesh"
     url = "categories/servicemesh/"
-    weight = 4
-
-[[menu.main]]
-    parent = "Categories"
-    name = "DevOps"
-    url = "categories/devops/"
-    weight = 5
+    weight = 6
 
 [[menu.main]]
     parent = "Categories"
     name = "Docker"
     url = "categories/docker/"
-    weight = 6
+    weight = 7
 
 [[menu.main]]
     parent = "Categories"
     name = "Hugo"
     url = "categories/hugo/"
-    weight = 7
+    weight = 8
 
 [[menu.main]]
     parent = "Categories"
     name = "Linux"
     url = "categories/linux/"
-    weight = 8
+    weight = 9
+
 
 [[menu.main]]
     identifier = "Books"
