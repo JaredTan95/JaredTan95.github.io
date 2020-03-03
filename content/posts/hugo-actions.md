@@ -1,6 +1,6 @@
 ---
 keywords: 
-- 抠腚Coding笔记
+- 一万小时极客
 - Hugo
 - GitHub Pages
 - Github Actions

@@ -3,6 +3,6 @@ baseurl: "https://jaredtan95.github.io"
 DefaultContentLanguage: "zh-cn"
 hasCJKLanguage: true
 languageCode: "zh-cn"
-title: "抠腚Coding笔记"
+title: "一万小时极客"
 metaDataFormat: "yaml"
 ---

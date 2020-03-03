@@ -1,7 +1,7 @@
 baseurl = "https://jaredtan95.github.io"
 languageCode = "en-us"
 DefaultContentLanguage = "zh"
-title = "抠腚Coding笔记"
+title = "一万小时极客"
 theme = ["hugo-notice", "beautifulhugo"]
 publishdir = ""
 metaDataFormat = "yaml"
@@ -31,9 +31,9 @@ enableGitInfo = true
   hrefTargetBlank = true
 
 [Params]
-  homeTitle = "Hi,我是谭建" # Set a different text for the header on the home page
+  homeTitle = "嗨,这里是一万小时极客" # Set a different text for the header on the home page
   titleicon = '<i class="fab fa-dev"></i>'
-  #subtitle = "...subtitle...."
+  subtitle = "我是作者 Jared Tan"
   keywords = "Java、微服务、OpenTracing、OpenTelementry、APM、docker、kubernetes、istio、devops、hugo、golang、云原生"
   description = "description"
   mainSections = ["posts"]
@@ -180,6 +180,12 @@ position = "center top"
     name = "Linux"
     url = "categories/linux/"
     weight = 9
+
+[[menu.main]]
+    parent = "Categories"
+    name = "其他"
+    url = "categories/others/"
+    weight = 10
 
 
 [[menu.main]]

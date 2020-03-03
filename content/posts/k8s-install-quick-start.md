@@ -1,6 +1,6 @@
 ---
 keywords:
-- 抠腚Coding笔记
+- 一万小时极客
 - Kubernetes 集群搭建
 - Kubernetes 快速搭建
 title: "30分钟搭建一个单主 Kubernetes 集群"
