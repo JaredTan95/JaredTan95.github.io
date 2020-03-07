@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>photoswipe on 一万小时极客</title><link>https://jaredtan95.github.io/tags/photoswipe/</link><description>Recent content in photoswipe on 一万小时极客</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>tanjian@apache.org (Jared.Tan)</managingEditor><webMaster>tanjian@apache.org (Jared.Tan)</webMaster><lastBuildDate>Mon, 20 Mar 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtan95.github.io/tags/photoswipe/index.xml" rel="self" type="application/rss+xml"/><item><title>Photoswipe Gallery Sample</title><link>https://jaredtan95.github.io/post/2017-03-20-photoswipe-gallery-sample/</link><pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate><author>tanjian@apache.org (Jared.Tan)</author><guid>https://jaredtan95.github.io/post/2017-03-20-photoswipe-gallery-sample/</guid><description>&lt;p>Beautiful Hugo adds a few custom shortcodes created by &lt;a href="https://www.liwen.id.au/heg/">Li-Wen Yip&lt;/a> and &lt;a href="https://github.com/GjjvdBurg/HugoPhotoSwipe">Gert-Jan van den Berg&lt;/a> for making galleries with &lt;a href="http://photoswipe.com">PhotoSwipe&lt;/a> .&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>photoswipe on 一万小时极客</title><link>https://jared-says.cn/tags/photoswipe/</link><description>Recent content in photoswipe on 一万小时极客</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>tanjian@apache.org (Jared.Tan)</managingEditor><webMaster>tanjian@apache.org (Jared.Tan)</webMaster><lastBuildDate>Mon, 20 Mar 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://jared-says.cn/tags/photoswipe/index.xml" rel="self" type="application/rss+xml"/><item><title>Photoswipe Gallery Sample</title><link>https://jared-says.cn/post/2017-03-20-photoswipe-gallery-sample/</link><pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate><author>tanjian@apache.org (Jared.Tan)</author><guid>https://jared-says.cn/post/2017-03-20-photoswipe-gallery-sample/</guid><description>&lt;p>Beautiful Hugo adds a few custom shortcodes created by &lt;a href="https://www.liwen.id.au/heg/">Li-Wen Yip&lt;/a> and &lt;a href="https://github.com/GjjvdBurg/HugoPhotoSwipe">Gert-Jan van den Berg&lt;/a> for making galleries with &lt;a href="http://photoswipe.com">PhotoSwipe&lt;/a> .&lt;/p>
 &lt;div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-&lt;link rel="stylesheet" href="https://jaredtan95.github.io/css/hugo-easy-gallery.css" />
+&lt;link rel="stylesheet" href="https://jared-says.cn/css/hugo-easy-gallery.css" />
 &lt;div class="box" >
 &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-&lt;div class="img" style="background-image: url('https://jaredtan95.github.io/img/hexagon-thumb.jpg');">
-&lt;img itemprop="thumbnail" src="https://jaredtan95.github.io/img/hexagon-thumb.jpg" alt="/img/hexagon-thumb.jpg"/>
+&lt;div class="img" style="background-image: url('https://jared-says.cn/img/hexagon-thumb.jpg');">
+&lt;img itemprop="thumbnail" src="https://jared-says.cn/img/hexagon-thumb.jpg" alt="/img/hexagon-thumb.jpg"/>
 &lt;/div>
-&lt;a href="https://jaredtan95.github.io/img/hexagon.jpg" itemprop="contentUrl">&lt;/a>
+&lt;a href="https://jared-says.cn/img/hexagon.jpg" itemprop="contentUrl">&lt;/a>
 &lt;/figure>
 &lt;/div>
 &lt;div class="box" >
 &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-&lt;div class="img" style="background-image: url('https://jaredtan95.github.io/img/sphere-thumb.jpg');">
-&lt;img itemprop="thumbnail" src="https://jaredtan95.github.io/img/sphere-thumb.jpg" alt="Sphere"/>
+&lt;div class="img" style="background-image: url('https://jared-says.cn/img/sphere-thumb.jpg');">
+&lt;img itemprop="thumbnail" src="https://jared-says.cn/img/sphere-thumb.jpg" alt="Sphere"/>
 &lt;/div>
-&lt;a href="https://jaredtan95.github.io/img/sphere.jpg" itemprop="contentUrl">&lt;/a>
+&lt;a href="https://jared-says.cn/img/sphere.jpg" itemprop="contentUrl">&lt;/a>
 &lt;figcaption>
 &lt;p>Sphere&lt;/p>
 &lt;/figcaption>
@@ -22,10 +22,10 @@
 &lt;/div>
 &lt;div class="box" >
 &lt;figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-&lt;div class="img" style="background-image: url('https://jaredtan95.github.io/img/triangle-thumb.jpg');">
-&lt;img itemprop="thumbnail" src="https://jaredtan95.github.io/img/triangle-thumb.jpg" alt="This is a long comment about a triangle"/>
+&lt;div class="img" style="background-image: url('https://jared-says.cn/img/triangle-thumb.jpg');">
+&lt;img itemprop="thumbnail" src="https://jared-says.cn/img/triangle-thumb.jpg" alt="This is a long comment about a triangle"/>
 &lt;/div>
-&lt;a href="https://jaredtan95.github.io/img/triangle.jpg" itemprop="contentUrl">&lt;/a>
+&lt;a href="https://jared-says.cn/img/triangle.jpg" itemprop="contentUrl">&lt;/a>
 &lt;figcaption>
 &lt;p>Triangle&lt;/p>
 &lt;/figcaption>
