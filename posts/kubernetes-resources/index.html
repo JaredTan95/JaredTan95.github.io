@@ -1,0 +1,363 @@
+<!doctype html><html lang=zh itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Kubernetes 资源清单(文章有点长) - Java|APM|微服务|OpenTracing|OpenTelementry|云原生|Kubernetes|Docker|Istio|Hugo|</title><meta content="一万小时极客,Kubernetes Resources,Kubernetes 资源清单" name=keywords><meta name=description content="Kubernetes 中所有的内容都抽象为资源，资源实例化（被调用、被执行了）之后，叫做对象。"><meta name=author content="Jared.Tan"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"一万小时极客","url":"https:\/\/jared-says.cn"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/jared-says.cn"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/jared-says.cn","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/jared-says.cn\/posts\/kubernetes-resources\/","name":"Kubernetes 资源清单(文章有点长)"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"Jared.Tan"},"headline":"Kubernetes 资源清单(文章有点长)","description":"Kubernetes 中所有的内容都抽象为资源，资源实例化（被调用、被执行了）之后，叫做对象。","inLanguage":"zh","wordCount":5310,"datePublished":"2020-03-07T21:42:47","dateModified":"2020-03-07T21:42:47","image":"http:\/\/q67bf0oit.bkt.clouddn.com\/blog\/photo.jpeg","keywords":["kubernetes"],"mainEntityOfPage":"https:\/\/jared-says.cn\/posts\/kubernetes-resources\/","publisher":{"@type":"Organization","name":"https:\/\/jared-says.cn","logo":{"@type":"ImageObject","url":"http:\/\/q67bf0oit.bkt.clouddn.com\/blog\/photo.jpeg","height":60,"width":60}}}</script><meta property="og:title" content="Kubernetes 资源清单(文章有点长)"><meta property="og:description" content="Kubernetes 中所有的内容都抽象为资源，资源实例化（被调用、被执行了）之后，叫做对象。"><meta property="og:image" content="http://q67bf0oit.bkt.clouddn.com/blog/photo.jpeg"><meta property="og:url" content="https://jared-says.cn/posts/kubernetes-resources/"><meta property="og:type" content="website"><meta property="og:site_name" content="一万小时极客"><meta name=twitter:title content="Kubernetes 资源清单(文章有点长)"><meta name=twitter:description content="Kubernetes 中所有的内容都抽象为资源，资源实例化（被调用、被执行了）之后，叫做对象。"><meta name=twitter:image content="http://q67bf0oit.bkt.clouddn.com/blog/photo.jpeg"><meta name=twitter:card content="summary"><link href=https://hugo-picture.oss-cn-beijing.aliyuncs.com/favicon-32x32.png rel=icon type=image/x-icon><meta name=generator content="Hugo 0.62.2"><link rel=alternate href=https://jared-says.cn/index.xml type=application/rss+xml title=一万小时极客><link href=https://cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css rel=stylesheet><link href=https://cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css rel=stylesheet><link rel=stylesheet href=/css/bundle.min.42ff94569ecb5cd303cbc9678aef61aa913d4107fbcc9048ff13d2714cc71efe.css integrity="sha256-Qv+UVp7LXNMDy8lniu9hqpE9QQf7zJBI/xPScUzHHv4="><script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?efe96f04908ae320df234a4f5626879e";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script><script src=https://jared-says.cn/js/pace.min.js></script><script src=https://jared-says.cn/js/busuanzi.pure.mini.js></script><script>var int=setInterval(fixCount,50);function fixCount(){if(document.getElementById('busuanzi_container_site_uv').ownerDocument.defaultView.getComputedStyle(document.getElementById('busuanzi_container_site_uv'),null).display==='inline'){clearInterval(int);document.getElementById('busuanzi_value_site_uv')=parseInt(document.getElementById('busuanzi_value_site_uv').innerHTML)+parseInt('100000');}}</script><div class=top-scroll-bar></div><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-159351035-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>切换导航</span>
+<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button>
+<a class=navbar-brand href=https://jared-says.cn>👈 跳到首页</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li class=navlinks-container><a class=navlinks-parent><i class="fas fa-dharmachakra fa-spin" style=color:#986dbd></i>文章分类</a><div class=navlinks-children><a href=/categories/java/>Java</a>
+<a href=/categories/springcloud/>SpringCloud</a>
+<a href=/categories/apm/>APM</a>
+<a href=/categories/middleware/>中间件</a>
+<a href=/categories/kubernetes/>kubernetes</a>
+<a href=/categories/servicemesh/>Service Mesh</a>
+<a href=/categories/docker/>Docker</a>
+<a href=/categories/hugo/>Hugo</a>
+<a href=/categories/linux/>Linux</a>
+<a href=/categories/others/>其他</a></div></li><li class=navlinks-container><a class=navlinks-parent><i class="fab fa-book"></i>电子书Hub</a><div class=navlinks-children><a href=/#>无责任分享</a>
+<a href=https://istio.io/zh/docs>Istio service mesh</a></div></li><li><a href=#modalSearch data-toggle=modal data-target=#modalSearch style=outline:none><span class="hidden-sm hidden-md hidden-lg">搜索</span> <span id=searchGlyph class="glyphicon glyphicon-search"></span></a></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title=一万小时极客 href=https://jared-says.cn><img class=avatar-img src=http://q67bf0oit.bkt.clouddn.com/blog/photo.jpeg alt=一万小时极客></a></div></div></div></nav><div id=modalSearch class="modal fade" role=dialog><div class=modal-dialog><div class=modal-content><div class=modal-header><button type=button class=close data-dismiss=modal>&#215;</button><h4 class=modal-title>Search fuckcloudnative.io</h4></div><div class=modal-body><div class=aa-input-container id=aa-input-container><input type=search id=aa-search-input class=aa-input-search placeholder="Search for titles or URIs..." name=search autocomplete=off><svg class="aa-input-icon" viewBox="654 -372 1664 1664"><path d="M1806 332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2 1481.3-116 1358-116s-228.8 43.8-316.5 131.5S910 208.7 910 332s43.8 228.8 131.5 316.5S1234.7 780 1358 780s228.8-43.8 316.5-131.5S1806 455.3 1806 332zm512 832c0 34.7-12.7 64.7-38 90s-55.3 38-90 38c-36 0-66-12.7-90-38l-343-342c-119.3 82.7-252.3 124-399 124-95.3.0-186.5-18.5-273.5-55.5s-162-87-225-150-113-138-150-225S654 427.3 654 332s18.5-186.5 55.5-273.5 87-162 150-225 138-113 225-150S1262.7-372 1358-372s186.5 18.5 273.5 55.5 162 87 225 150 113 138 150 225S2062 236.7 2062 332c0 146.7-41.3 279.7-124 399l343 343C2305.7 1098.7 2318 1128.7 2318 1164z" /></svg></div><script src=https://jared-says.cn/js/algoliasearch.min.js></script><script src=https://jared-says.cn/js/autocomplete.min.js></script><script>var client=algoliasearch("4BELQK2TOI","32e3e1294df2f152c5e769eac44b32dd");var index=client.initIndex('blog');autocomplete('#aa-search-input',{hint:false},{source:autocomplete.sources.hits(index,{hitsPerPage:5}),displayKey:'name',templates:{suggestion:function(suggestion){return '<span>'+'<a href="/'+suggestion.uri+'">'+
+suggestion._highlightResult.title.value+'</a></span>';}}});</script></div><div class=modal-footer><button type=button class="btn btn-default" data-dismiss=modal>close</button></div></div></div></div><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><div id=header-big-imgs data-num-img=1 data-img-src-1=http://q67bf0oit.bkt.clouddn.com/blog/kubernetesfdfdf.jpeg data-img-desc-1=Kubernetes></div><header class="header-section has-img"><div class="intro-header big-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1 align=center>Kubernetes 资源清单(文章有点长)</h1><hr class=small><h2 class=post-subheading>Kubernetes Resources</h2><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;发表于 2020 年 3 月 7 日
+&nbsp;(上次修改时间 2020 年 3 月 8 日)
+&nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;11&nbsp;分钟
+&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;5310&nbsp;个字
+&nbsp;|&nbsp;<i class="fas fa-book-reader"></i>&nbsp;<span id=busuanzi_value_page_pv></span>次阅读</span></div></div></div></div><span class=img-desc style=display:inline></span></div><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>Kubernetes 资源清单(文章有点长)</h1><h2 class=post-subheading>Kubernetes Resources</h2><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;发表于 2020 年 3 月 7 日
+&nbsp;(上次修改时间 2020 年 3 月 8 日)
+&nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;11&nbsp;分钟
+&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;5310&nbsp;个字
+&nbsp;|&nbsp;<i class="fas fa-book-reader"></i>&nbsp;<span id=busuanzi_value_page_pv></span>次阅读</span></div></div></div></div></div></header><div class="minor-banner-box container"><div class="minor-banner row"><li class="minor-item col-md-3"><a href=https://www.shiyanlou.com/courses/1360 target=_blank title="Spring Cloud 与 Docker 实战"><img src=https://dn-simplecloud.shiyanlou.com/courses/uid770606-20191205-1575541847039 alt="Spring Cloud 与 Docker 实战"></a></li></div></div><div class=container role=main><div class=row><div id=container class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><aside class=toc><div id=anchors-navbar><i class="fa fa-anchor"></i><nav id=TableOfContents><ul><li><a href=#kubernetes-中的资源>Kubernetes 中的资源</a></li><li><a href=#kubernetes-中有哪些常用资源对象>Kubernetes 中有哪些常用资源对象？</a></li><li><a href=#对象资源格式>对象资源格式</a></li><li><a href=#配置清单模式创建pod>配置清单模式创建Pod</a></li><li><a href=#标签和标签选择器>标签和标签选择器</a><ul><li></li></ul></li><li><a href=#资源注解>资源注解</a></li></ul></nav></div></aside><h2 id=kubernetes-中的资源>Kubernetes 中的资源</h2><p>Kubernetes 中所有的内容都抽象为资源，资源实例化（被调用、被执行了）之后，叫做对象。</p><p>大致地可以总结为：对象描述了什么容器化应用在运行（以及在哪个 Node 上）；可以被应用使用的资源；关于应用如何表现的策略，比如重启策略、升级策略，以及容错策略；</p><p>Kubernetes 对象是 <strong>“目标性记录”</strong>： 一旦创建对象，Kubernetes 系统将持续工作以确保对象存在。通过创建对象，可以有效地告知 Kubernetes 系统，所需要的集群工作负载看起来是什么样子的，这就是 Kubernetes 集群的 期望状态。</p><p>与 Kubernetes 对象工作(是否创建、修改，或者删除）： 需要使用 Kubernetes API。当使用 <strong>kubectl</strong> 命令行接口时，比如，CLI 会使用必要的 Kubernetes API 调用，也可以在程序中直接使用 Kubernetes API。</p><h2 id=kubernetes-中有哪些常用资源对象>Kubernetes 中有哪些常用资源对象？</h2><p>依据资源的主要功能作为分类标准，Kubernetes的API对象大体可分为五个类别：</p><ul><li>集群级别的资源：Namespace、Node、Role、ClusterRole、RoleBinding、ClusterRoleBinding</li><li>工作负载类型资源（workload）：<ul><li>Pod: Kubernetes中最小的负载单元</li><li>ReplicaSet：简称RC，管理Pod的创建，通过标签控制副本数</li><li>Deployment：控制器，通过控制RC去创建Pod</li><li>StatefulSet：主要用于有状态服务</li><li>DaemonSet：在每个节点都运行一个Pod组件</li><li>Job、CronJob：为了（批）处理、在kubernetes v1.11中被废弃的 ReplicationController</li></ul></li><li>服务发现及负载均衡资源（Service Discovery And LoadBalance）：Service、Ingress&mldr;</li><li>配置与存储类型：Volume（存储卷）、CSI（容器存储接口，可以扩展各种各样的第三方存储卷，现在市面上的大多数存储都是支持CSI。）</li><li>特殊类型的存储卷：ConfigMap（当成配置中心来使用的资源类型）、Secret（保存敏感数据）、DownwardAPI（把外部环境中的信息输出给环境，比如把运行Pod的所在Node的NodeIp传进Pod）</li><li>元数据(metadata)：HPA、PodTemplate、LimitRange(资源限制)</li></ul><h2 id=对象资源格式>对象资源格式</h2><p>Kubernetes API 仅接受及响应JSON格式的数据（JSON对象），同时，为了便于使用，它也允许用户提供YAML格式的POST对象，但API Server需要实现自行将其转换为JSON格式后方能提交。API Server接受和返回的所有JSON对象都遵循同一个模式，它们都具有kind和apiVersion字段，用于标识对象所属的资源类型、API群组及相关的版本。</p><p>大多数的对象或列表类型的资源提供元数据信息，如名称、隶属的名称空间和标签等；spec则用于定义用户期望的状态，不同的资源类型，其状态的意义也各有不同，例如Pod资源最为核心的功能在于运行容器；而status则记录着活动对象的当前状态信息，它由Kubernetes系统自行维护，对用户来说为只读字段。</p><p>获取对象的JSON格式的配置清单可以通过 <code>kubectl get TYPE/NAME -o yaml</code> 命令来获取。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pod nginx-67685f79b5-8rjk7 -o yaml    #获取该pod的配置清单</span>
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: <span style=color:#e6db74>&#34;2019-08-30T07:00:30Z&#34;</span>
+  generateName: nginx-67685f79b5-
+  labels:
+    pod-template-hash: 67685f79b5
+    run: nginx
+  name: nginx-67685f79b5-8rjk7
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: nginx-67685f79b5
+    uid: 6de479a9-52f6-4581-8e06-884a84dab593
+  resourceVersion: <span style=color:#e6db74>&#34;244953&#34;</span>
+  selfLink: /api/v1/namespaces/default/pods/nginx-67685f79b5-8rjk7
+  uid: 0b6f5a87-4129-4b61-897a-6020270a846e
+spec:
+  containers:
+  - image: nginx:1.12
+    imagePullPolicy: IfNotPresent
+    name: nginx
+    resources: <span style=color:#f92672>{</span><span style=color:#f92672>}</span>
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-s8mbf
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: k8s-node1
+  priority: <span style=color:#ae81ff>0</span>
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: <span style=color:#f92672>{</span><span style=color:#f92672>}</span>
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: <span style=color:#ae81ff>30</span>
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: <span style=color:#ae81ff>300</span>
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: <span style=color:#ae81ff>300</span>
+  volumes:
+  - name: default-token-s8mbf
+    secret:
+      defaultMode: <span style=color:#ae81ff>420</span>
+      secretName: default-token-s8mbf
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: <span style=color:#e6db74>&#34;2019-08-30T07:00:30Z&#34;</span>
+</code></pre></div><ul><li><p>创建资源的方法</p><ul><li>apiserver 仅接受 JSON 格式的资源定义</li><li>yaml 格式提供资源配置清单，apiserver 可自动将其转为 json 格式，而后再提交。</li></ul></li><li><p>大部分资源的配置清单由以下5个字段组成：</p></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># kubectl api-versions  命令可以获取</span>
+apiVersion: 指明api资源属于哪个群组和版本，同一个组可以有多个版本 group/version
+
+kind:       资源类别，标记创建的资源类型，k8s主要支持以下资源类别
+    Pod、ReplicaSet、Deployment、StatefulSet、DaemonSet、Job、Cronjob
+
+metadata:   用于描述对象的属性信息，主要提供以下字段：
+  name:          指定当前对象的名称，其所属的名称空间的同一类型中必须唯一
+  namespace:     指定当前对象隶属的名称空间，默认值为default
+  labels:        设定用于标识当前对象的标签，键值数据，常被用作挑选条件
+  annotations:   非标识型键值数据，用来作为挑选条件，用于labels的补充
+
+spec:       用于描述所期望的对象应该具有的状态（disired state），资源对象中最重要的字段。
+
+status:     用于记录对象在系统上的当前状态（current state），本字段由kubernetes自行维护
+</code></pre></div><ul><li>kubernetes存在内嵌的格式说明，定义资源配置清单时，可以使用kubectl explain命令进行查看，如查看Pod这个资源的定义：</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl explain pods</span>
+KIND:     Pod
+VERSION:  v1
+
+DESCRIPTION:
+     Pod is a collection of containers that can run on a host. This resource is
+     created by clients and scheduled onto hosts.
+
+FIELDS:
+   apiVersion    &lt;string&gt;
+     APIVersion defines the versioned schema of this representation of an
+     object. Servers should convert recognized schemas to the latest internal
+     value, and may reject unrecognized values. More info:
+     https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
+
+   kind    &lt;string&gt;
+     Kind is a string value representing the REST resource this object
+     represents. Servers may infer this from the endpoint the client submits
+     requests to. Cannot be updated. In CamelCase. More info:
+     https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
+
+   metadata    &lt;Object&gt;
+     Standard object<span style=color:#960050;background-color:#1e0010>&#39;</span>s metadata. More info:
+     https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+
+   spec    &lt;Object&gt;
+     Specification of the desired behavior of the pod. More info:
+     https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
+
+   status    &lt;Object&gt;
+     Most recently observed status of the pod. This data may not be up to date.
+     Populated by the system. Read-only. More info:
+     https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
+</code></pre></div><p>如果需要了解某<strong>一级</strong>字段表示的对象之下的<strong>二级</strong>对象字段时，只需要指定其<strong>二级</strong>字段的对象名称即可，三级和四级字段对象等的查看方式依次类推。<em>例如查看Pod资源的Spec对象支持嵌套使用的二级字段</em>:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl explain pods.spec</span>
+RESOURCE: spec &lt;Object&gt;
+
+DESCRIPTION:
+     Specification of the desired behavior of the pod. More info:
+     https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
+
+     PodSpec is a description of a pod.
+
+FIELDS:
+   activeDeadlineSeconds    &lt;integer&gt;
+     Optional duration in seconds the pod may be active on the node relative to
+     StartTime before the system will actively try to mark it failed and kill
+     associated containers. Value must be a positive integer.
+
+   affinity    &lt;Object&gt;
+     If specified, the pod<span style=color:#960050;background-color:#1e0010>&#39;</span>s scheduling constraints
+
+   automountServiceAccountToken    &lt;boolean&gt;
+     AutomountServiceAccountToken indicates whether a service account token
+     should be automatically mounted.
+ .....
+</code></pre></div><h2 id=配置清单模式创建pod>配置清单模式创建Pod</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># mkdir manfests</span> 
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># cd manfests/</span>
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span><span style=color:#75715e># vim pod-demo.yaml</span>
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-demo
+  namespace: default
+  labels:
+    app: myapp
+    tier: frontend
+spec:
+  containers:
+  - name: myapp
+    image: ikubernetes/myapp:v1
+  - name: busybox
+    image: busybox:latest
+    command:
+    - <span style=color:#e6db74>&#34;/bin/sh&#34;</span>
+    - <span style=color:#e6db74>&#34;-c&#34;</span>
+    - <span style=color:#e6db74>&#34;sleep 3600&#34;</span>
+
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span><span style=color:#75715e># kubectl create -f pod-demo.yaml</span> 
+pod/pod-demo created
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span>#
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods</span> 
+NAME       READY   STATUS    RESTARTS   AGE
+pod-demo   2/2     Running   <span style=color:#ae81ff>0</span>          15s
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span><span style=color:#75715e># kubectl describe pods pod-demo   #查看pod详细信息</span>
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -o wide</span> 
+NAME       READY   STATUS    RESTARTS   AGE    IP            NODE        NOMINATED NODE   READINESS GATES
+pod-demo   2/2     Running   <span style=color:#ae81ff>0</span>          102s   10.244.1.17   k8s-node1   &lt;none&gt;           &lt;none&gt;
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span># 
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span><span style=color:#75715e># curl 10.244.1.17</span>
+Hello MyApp | Version: v1 | &lt;a href<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;hostname.html&#34;</span>&gt;Pod Name&lt;/a&gt;
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span># 
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span><span style=color:#75715e># kubectl logs pod-demo myapp   #查看pod-demo下myapp的日志</span>
+10.244.0.0 - - <span style=color:#f92672>[</span>03/Sep/2019:02:32:52 +0000<span style=color:#f92672>]</span> <span style=color:#e6db74>&#34;GET / HTTP/1.1&#34;</span> <span style=color:#ae81ff>200</span> <span style=color:#ae81ff>65</span> <span style=color:#e6db74>&#34;-&#34;</span> <span style=color:#e6db74>&#34;curl/7.29.0&#34;</span> <span style=color:#e6db74>&#34;-&#34;</span>
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span># 
+<span style=color:#f92672>[</span>root@k8s-master manfests<span style=color:#f92672>]</span><span style=color:#75715e># kubectl exec -it pod-demo -c myapp -- /bin/sh   #进入myapp容器</span>
+/ #
+</code></pre></div><ul><li>Pod资源spec的containers字段解析</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl explain pods.spec.containers</span>
+name    &lt;string&gt;    指定容器名称
+
+image    &lt;string&gt;    指定容器所需镜像仓库及镜像名，例如ikubernetes/myapp:v1
+
+imagePullPolicy    &lt;string&gt;  （可取以下三个值Always,Never,IfNotpresent）
+    Always：镜像标签为“latest”时，总是去指定的仓库中获取镜像
+    Never：禁止去仓库中下载镜像，即仅使用本地镜像
+    IfNotpresent：如果本地没有该镜像，则去镜像仓库中下载镜像
+    
+ports    &lt;<span style=color:#f92672>[</span><span style=color:#f92672>]</span>Object&gt;  值是一个列表，由一到多个端口对象组成。例如：<span style=color:#f92672>(</span>名称<span style=color:#f92672>(</span>可后期调用<span style=color:#f92672>)</span> 端口号 协议 暴露在的地址上<span style=color:#f92672>)</span> 暴露端口只是提供额外信息的，不能限制系统是否真的暴露
+    containerPort  &lt;integer&gt;  指定暴露的容器端口
+    name    &lt;string&gt;    当前端口的名称
+    hostIP    &lt;string&gt;   主机端口要绑定的主机IP
+    hostPort    &lt;integer&gt;   主机端口，它将接收到请求通过NAT转发至containerPort字段指定的端口
+    protocol    &lt;string&gt;    端口的协议，默认是TCP
+
+args    &lt;<span style=color:#f92672>[</span><span style=color:#f92672>]</span>string&gt;  传递参数给command 相当于docker中的CMD
+
+command    &lt;<span style=color:#f92672>[</span><span style=color:#f92672>]</span>string&gt;  相当于docker中的ENTRYPOINT
+</code></pre></div><ul><li>镜像中的命令和pod中定义的命令关系说明：<ul><li>如果pod中没有提供command或者args，则使用docker中的CMD和ENTRYPOINT。</li><li>如果pod中提供了command但不提供args，则使用提供的command，忽略docker中的Cmd和Entrypoint。</li><li>如果pod中只提供了args，则args将作为参数提供给docker中的Entrypoint使用。</li><li>如果pod中同时提供了command和args，则docker中的cmd和Entrypoint将会被忽略，pod中的args将最为参数给cmd使用。</li></ul></li></ul><h2 id=标签和标签选择器>标签和标签选择器</h2><h4 id=标签>标签</h4><p>标签是 Kubernetes 极具特色的功能之一，它能够附加于 Kubernetes 的<strong>任何</strong>资源对象之上。简单来说，标签就是“键值”类型的数据，可以在资源创建时直接指定，也可以随时按需添加到活动对象中。而后即可由标签选择器进行匹配度检查从而完成资源挑选。一个对象可拥有不止一个标签，而同一个标签也可以被添加到至多个资源之上。</p><blockquote><p>key=value
+key：字母、数字、<em>、-、. 只能以字母或者数字开头
+value：可以为空，只能以字母或者数字开头及结尾，中间可以使用字母、数字、</em>、-、.
+在实际环境中，尽量做到见名知意，且尽可能保持简单</p></blockquote><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods --show-labels     #查看pod信息时，并显示对象的标签信息</span>
+NAME       READY   STATUS    RESTARTS   AGE     LABELS
+pod-demo   2/2     Running   <span style=color:#ae81ff>5</span>          5h13m   app<span style=color:#f92672>=</span>myapp,tier<span style=color:#f92672>=</span>frontend
+
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -l app   #过滤包含app标签的pod</span>
+NAME       READY   STATUS    RESTARTS   AGE
+pod-demo   2/2     Running   <span style=color:#ae81ff>5</span>          5h20m
+
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -l app,tier    #过滤同时包含app，tier标签的pod</span>
+NAME       READY   STATUS    RESTARTS   AGE
+pod-demo   2/2     Running   <span style=color:#ae81ff>5</span>          5h20m
+
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -L app   #显示有app键的标签信息</span>
+NAME       READY   STATUS    RESTARTS   AGE     APP
+pod-demo   2/2     Running   <span style=color:#ae81ff>5</span>          5h21m   myapp
+
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -L app,tier    #显示有app和tier键的标签信息</span>
+NAME       READY   STATUS    RESTARTS   AGE     APP     TIER
+pod-demo   2/2     Running   <span style=color:#ae81ff>5</span>          5h21m   myapp   frontend
+</code></pre></div><ul><li>给已有的pod添加标签，通过 <code>kubectl label</code> 命令</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl label --help</span> 
+Usage:
+  kubectl label <span style=color:#f92672>[</span>--overwrite<span style=color:#f92672>]</span> <span style=color:#f92672>(</span>-f FILENAME | TYPE NAME<span style=color:#f92672>)</span> KEY_1<span style=color:#f92672>=</span>VAL_1 ... KEY_N<span style=color:#f92672>=</span>VAL_N
+<span style=color:#f92672>[</span>--resource-version<span style=color:#f92672>=</span>version<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>options<span style=color:#f92672>]</span>
+
+
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl label pods/pod-demo env=production    #给pod资源pod-demo添加env标签值为production</span>
+pod/pod-demo labeled
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods --show-labels</span>
+NAME       READY   STATUS    RESTARTS   AGE     LABELS
+pod-demo   2/2     Running   <span style=color:#ae81ff>5</span>          5h32m   app<span style=color:#f92672>=</span>myapp,env<span style=color:#f92672>=</span>production,tier<span style=color:#f92672>=</span>frontend
+</code></pre></div><ul><li>修改已有的标签的值</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl label pods/pod-demo env=testing --overwrite   #同上面添加标签一样，只是添加--overwrite参数</span>
+pod/pod-demo labeled
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span># 
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods --show-labels</span>
+NAME       READY   STATUS    RESTARTS   AGE     LABELS
+pod-demo   2/2     Running   <span style=color:#ae81ff>5</span>          5h39m   app<span style=color:#f92672>=</span>myapp,env<span style=color:#f92672>=</span>testing,tier<span style=color:#f92672>=</span>frontend
+</code></pre></div><h4 id=标签选择器>标签选择器</h4><p>标签选择器用于选择标签的查询条件或选择标准，kubernetes API目前支持<strong>两个选择器</strong>：基于等值关系以及基于集合关系。例如，env=production和env!=qa是基于等值关系的选择器，而tier in(frontend,backend)则是基于集合关系的选择器。使用标签选择器时还将遵循以下逻辑：</p><ul><li><p>1 同时指定的多个选择器之间的逻辑关系为“与”操作</p></li><li><p>2 使用空值的标签选择器意味着每个资源对象都将被选中</p></li><li><p>3 空的标签选择器将无法选出任何资源。</p></li><li><p>等值关系标签选择器：<strong>=</strong>、<strong>==</strong>和**!=**三种，其中前两个意义相同，都表示等值关系；最后一个表示不等关系。</p></li><li><p>集合关系标签选择器：</p><ul><li>KEY in(VALUE1,VALUE2,&mldr;)：指定的健名的值存在于给定的列表中即满足条件</li><li>KEY notin(VALUE1,VALUE2,&mldr;)：指定的键名的值不存在与给定的列表中即满足条件</li><li>KEY：所有存在此健名标签的资源。</li><li>!KEY：所有不存在此健名标签的资源。</li></ul></li><li><p>1 等值关系示例：</p></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -l app=myapp    #过滤标签键为app值为myapp的pod</span>
+NAME       READY   STATUS    RESTARTS   AGE
+pod-demo   2/2     Running   <span style=color:#ae81ff>6</span>          6h11m
+
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -l app=myapp,env=testing    #过滤标签键为app值为myqpp，并且标签键为env值为testing的pod</span>
+NAME       READY   STATUS    RESTARTS   AGE
+pod-demo   2/2     Running   <span style=color:#ae81ff>6</span>          6h11m
+
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -l app!=my    #过滤标签键为app值不为my的所有pod</span>
+NAME       READY   STATUS    RESTARTS   AGE
+pod-demo   2/2     Running   <span style=color:#ae81ff>6</span>          6h17m
+</code></pre></div><ul><li>2 集合关系示例：</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -l &#34;app in (myapp)&#34;    #过滤键为app值有myapp的pod</span>
+NAME       READY   STATUS    RESTARTS   AGE
+pod-demo   2/2     Running   <span style=color:#ae81ff>6</span>          6h51m
+
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -l &#34;app notin (my)&#34;    #过滤键为app值没有my的pod</span>
+NAME       READY   STATUS    RESTARTS   AGE
+pod-demo   2/2     Running   <span style=color:#ae81ff>6</span>          6h59m
+</code></pre></div><p>处此之外，kubernetes 的诸多资源对象必须以标签选择器的方式关联到pod资源对象，例如Service、Deployment和ReplicaSet类型的资源等，它们在spec字段中嵌套使用嵌套的“selector”字段，通过“matchlabels”来指定标签选择器，有的甚至还支持使用“matchExpressions”构建复杂的标签选择器机制。
+- matchLabels：通过直接给定键值对来指定标签选择器
+- matchExpressions：基于表达式指定的标签选择器列表，每个选择器都形如“{key:KEY_NAME, operator:OPERATOR, values:[VALUE1,VALUE2,&mldr;]}”</p><h4 id=节点选择器>节点选择器</h4><p>pod节点选择器是<strong>标签及标签选择器</strong>的一种应用，它能够让pod对象基于集群中工作节点的标签来挑选倾向运行的目标节点。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#在定义pod资源清单时，可以通过nodeName来指定pod运行的节点，或者通过nodeSelector来挑选倾向的节点</span>
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl explain pods.spec</span>
+   nodeName    &lt;string&gt;
+     NodeName is a request to schedule this pod onto a specific node. If it is
+     non-empty, the scheduler simply schedules this pod onto that node, assuming
+     that it fits resource requirements.
+
+   nodeSelector    &lt;map<span style=color:#f92672>[</span>string<span style=color:#f92672>]</span>string&gt;
+     NodeSelector is a selector which must be true <span style=color:#66d9ef>for</span> the pod to fit on a node.
+     Selector which must match a node<span style=color:#960050;background-color:#1e0010>&#39;</span>s labels <span style=color:#66d9ef>for</span> the pod to be scheduled on
+     that node. More info:
+     https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
+</code></pre></div><ul><li>查看节点默认的标签</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get nodes --show-labels</span>
+NAME         STATUS   ROLES    AGE    VERSION   LABELS
+k8s-master   Ready    master   6d2h   v1.15.2   beta.kubernetes.io/arch<span style=color:#f92672>=</span>amd64,beta.kubernetes.io/os<span style=color:#f92672>=</span>linux,kubernetes.io/arch<span style=color:#f92672>=</span>amd64,kubernetes.io/hostname<span style=color:#f92672>=</span>k8s-master,kubernetes.io/os<span style=color:#f92672>=</span>linux,node-role.kubernetes.io/master<span style=color:#f92672>=</span>
+k8s-node1    Ready    &lt;none&gt;   6d1h   v1.15.2   beta.kubernetes.io/arch<span style=color:#f92672>=</span>amd64,beta.kubernetes.io/os<span style=color:#f92672>=</span>linux,kubernetes.io/arch<span style=color:#f92672>=</span>amd64,kubernetes.io/hostname<span style=color:#f92672>=</span>k8s-node1,kubernetes.io/os<span style=color:#f92672>=</span>linux
+k8s-node2    Ready    &lt;none&gt;   6d1h   v1.15.2   beta.kubernetes.io/arch<span style=color:#f92672>=</span>amd64,beta.kubernetes.io/os<span style=color:#f92672>=</span>linux,kubernetes.io/arch<span style=color:#f92672>=</span>amd64,kubernetes.io/hostname<span style=color:#f92672>=</span>k8s-node2,kubernetes.io/os<span style=color:#f92672>=</span>linux
+</code></pre></div><ul><li>给节点添加标签</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl label nodes/k8s-node1 disktype=ssd</span>
+node/k8s-node1 labeled
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get nodes --show-labels</span>
+NAME         STATUS   ROLES    AGE    VERSION   LABELS
+k8s-master   Ready    master   6d2h   v1.15.2   beta.kubernetes.io/arch<span style=color:#f92672>=</span>amd64,beta.kubernetes.io/os<span style=color:#f92672>=</span>linux,kubernetes.io/arch<span style=color:#f92672>=</span>amd64,kubernetes.io/hostname<span style=color:#f92672>=</span>k8s-master,kubernetes.io/os<span style=color:#f92672>=</span>linux,node-role.kubernetes.io/master<span style=color:#f92672>=</span>
+k8s-node1    Ready    &lt;none&gt;   6d2h   v1.15.2   beta.kubernetes.io/arch<span style=color:#f92672>=</span>amd64,beta.kubernetes.io/os<span style=color:#f92672>=</span>linux,disktype<span style=color:#f92672>=</span>ssd,kubernetes.io/arch<span style=color:#f92672>=</span>amd64,kubernetes.io/hostname<span style=color:#f92672>=</span>k8s-node1,kubernetes.io/os<span style=color:#f92672>=</span>linux
+k8s-node2    Ready    &lt;none&gt;   6d2h   v1.15.2   beta.kubernetes.io/arch<span style=color:#f92672>=</span>amd64,beta.kubernetes.io/os<span style=color:#f92672>=</span>linux,kubernetes.io/arch<span style=color:#f92672>=</span>amd64,kubernetes.io/hostname<span style=color:#f92672>=</span>k8s-node2,kubernetes.io/os<span style=color:#f92672>=</span>linux
+</code></pre></div><ul><li>修改yaml文件，添加节点选择器nodeSelector，然后重新创建pod</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># vim manfests/pod-demo.yaml</span>
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-demo
+  namespace: default
+  labels:
+    app: myapp
+    tier: frontend
+spec:
+  containers:
+  - name: myapp
+    image: ikubernetes/myapp:v1
+    ports:
+    - name: http
+      containerPort: <span style=color:#ae81ff>80</span>
+  - name: busybox
+    image: busybox:latest
+    command:
+    - <span style=color:#e6db74>&#34;/bin/sh&#34;</span>
+    - <span style=color:#e6db74>&#34;-c&#34;</span>
+    - <span style=color:#e6db74>&#34;sleep 3600&#34;</span>
+  nodeSelector: <span style=color:#75715e># 通过nodeSelector来挑选倾向的节点</span>
+    disktype: ssd
+    
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl delete -f manfests/pod-demo.yaml    #删除上面创建的pod资源</span>
+pod <span style=color:#e6db74>&#34;pod-demo&#34;</span> deleted
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl create -f manfests/pod-demo.yaml     #重新创建pod-demo资源</span>
+pod/pod-demo created
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -o wide     #查看pod，可以看到分配到了k8s-node1节点（也就是上面打上disktype标签的节点）</span>
+NAME       READY   STATUS    RESTARTS   AGE   IP            NODE        NOMINATED NODE   READINESS GATES
+pod-demo   2/2     Running   <span style=color:#ae81ff>0</span>          16s   10.244.1.19   k8s-node1   &lt;none&gt;           &lt;none&gt;
+
+<span style=color:#f92672>[</span>root@k8s-master ~<span style=color:#f92672>]</span><span style=color:#75715e># kubectl describe pods pod-demo</span>
+......
+Events:
+  Type    Reason     Age   From                Message
+  ----    ------     ----  ----                -------
+  Normal  Scheduled  58s   default-scheduler   Successfully assigned default/pod-demo to k8s-node1
+......
+</code></pre></div><h2 id=资源注解>资源注解</h2><p>除了标签（label）之外，Pod与其他各种资源还能使用资源注解（annotation）。与标签类似，注解也是“键值”类型的数据，不过它不能用于标签及挑选Kubernetes对象，<strong>仅可用于资源提供“元数据”信息</strong>。另外，注解中的元数据不受字符数量的限制，它可大可小，可以为结构化或非结构化形式，也支持使用在标签中禁止使用的其他字符。</p><br><div style=text-align:center;color:#ccc;font-size:16px;font-family:cursive>-------他日江湖相逢 <i class="fa fa-umbrella" style=color:#986dbd></i>再当杯酒言欢-------</div><div class="entry-shang text-center"><p>「真诚赞赏，手留余香」</p><button class="zs show-zs btn rewardButton" disable=enable onclick="var qr=document.getElementById('QR');if(qr.style.display==='none'){qr.style.display='block';}else{qr.style.display='none'}"> <span>赏</span></button></div><div class=zs-modal-bg></div><div class=zs-modal-box><div class=zs-modal-head><button type=button class=close>×</button>
+<span class=author><img src=http://q67bf0oit.bkt.clouddn.com/blog%2Fphoto.jpeg>Jared.Tan</span><p class=tip><i></i><span>真诚赞赏，手留余香</span></p></div><div class=zs-modal-body><div class=zs-modal-btns><button class="btn btn-blink" data-num=2>2元</button>
+<button class="btn btn-blink" data-num=5>5元</button>
+<button class="btn btn-blink" data-num=10>10元</button>
+<button class="btn btn-blink" data-num=50>50元</button>
+<button class="btn btn-blink" data-num=100>100元</button>
+<button class="btn btn-blink" data-num=1>任意金额</button></div><div class=zs-modal-pay><button class="btn btn-bred" id=pay-text>2元</button><p>使用<span id=pay-type>微信</span>扫描二维码完成支付</p><img src=/img/wechat-2.png id=pay-image></div></div><div class=zs-modal-footer><span class=zs-wechat><img src=/img/wechat-btn.png></span></div></div><div class=blog-tags><a href=https://jared-says.cn/tags/kubernetes/><i class="fa fa-tags"></i>kubernetes</a>&nbsp;</div><hr><section id=social-share><div class="list-inline footer-links"><div class=share-box aria-hidden=true><ul class=share><li><a href="//service.weibo.com/share/share.php?url=https%3a%2f%2fjared-says.cn%2fposts%2fkubernetes-resources%2f&title=Kubernetes%20%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95%28%e6%96%87%e7%ab%a0%e6%9c%89%e7%82%b9%e9%95%bf%29&pic=http%3a%2f%2fq67bf0oit.bkt.clouddn.com%2fblog%2fkubernetesfdfdf.jpeg" target=_blank title=分享到微博><i class="fab fa-weibo"></i></a></li><li><a href="//connect.qq.com/widget/shareqq/index.html?url=https%3a%2f%2fjared-says.cn%2fposts%2fkubernetes-resources%2f&title=Kubernetes%20%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95%28%e6%96%87%e7%ab%a0%e6%9c%89%e7%82%b9%e9%95%bf%29&source=Kubernetes%20%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95%28%e6%96%87%e7%ab%a0%e6%9c%89%e7%82%b9%e9%95%bf%29&desc=Kubernetes%20%e4%b8%ad%e6%89%80%e6%9c%89%e7%9a%84%e5%86%85%e5%ae%b9%e9%83%bd%e6%8a%bd%e8%b1%a1%e4%b8%ba%e8%b5%84%e6%ba%90%ef%bc%8c%e8%b5%84%e6%ba%90%e5%ae%9e%e4%be%8b%e5%8c%96%ef%bc%88%e8%a2%ab%e8%b0%83%e7%94%a8%e3%80%81%e8%a2%ab%e6%89%a7%e8%a1%8c%e4%ba%86%ef%bc%89%e4%b9%8b%e5%90%8e%ef%bc%8c%e5%8f%ab%e5%81%9a%e5%af%b9%e8%b1%a1%e3%80%82&pics=http%3a%2f%2fq67bf0oit.bkt.clouddn.com%2fblog%2fkubernetesfdfdf.jpeg&summary=Kubernetes%20%e4%b8%ad%e6%89%80%e6%9c%89%e7%9a%84%e5%86%85%e5%ae%b9%e9%83%bd%e6%8a%bd%e8%b1%a1%e4%b8%ba%e8%b5%84%e6%ba%90%ef%bc%8c%e8%b5%84%e6%ba%90%e5%ae%9e%e4%be%8b%e5%8c%96%ef%bc%88%e8%a2%ab%e8%b0%83%e7%94%a8%e3%80%81%e8%a2%ab%e6%89%a7%e8%a1%8c%e4%ba%86%ef%bc%89%e4%b9%8b%e5%90%8e%ef%bc%8c%e5%8f%ab%e5%81%9a%e5%af%b9%e8%b1%a1%e3%80%82" target=_blank title="分享到 QQ"><i class="fab fa-qq"></i></a></li><li><a href="//twitter.com/share?url=https%3a%2f%2fjared-says.cn%2fposts%2fkubernetes-resources%2f&text=Kubernetes%20%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95%28%e6%96%87%e7%ab%a0%e6%9c%89%e7%82%b9%e9%95%bf%29&via=" target=_blank title="分享到 Twitter"><i class="fab fa-twitter"></i></a></li><li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjared-says.cn%2fposts%2fkubernetes-resources%2f" target=_blank title="分享到 Facebook"><i class="fab fa-facebook"></i></a></li><li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjared-says.cn%2fposts%2fkubernetes-resources%2f&title=Kubernetes%20%e8%b5%84%e6%ba%90%e6%b8%85%e5%8d%95%28%e6%96%87%e7%ab%a0%e6%9c%89%e7%82%b9%e9%95%bf%29" target=_blank title="分享到 LinkedIn"><i class="fab fa-linkedin"></i></a></li></ul></div></div></section><h4 class=see-also>相关推荐</h4><ul><li><a href=/posts/k8s-install-quick-start/>30分钟搭建一个单主 Kubernetes 集群</a></li></ul></article><ul class="pager blog-pager"><li class=previous><a href=https://jared-says.cn/posts/skywalking-openresty-lua/ data-toggle=tooltip data-placement=top title="当 Openresty/Nginx 遇上 Skyalking">&larr; 前一篇</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"><li><a href=mailto:tanjian@apache.org target=_blank title="Email me"><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x" style=color:#986dbd></i><i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span></a></li><li><a href=http://q67bf0oit.bkt.clouddn.com/blog/WechatQR.jpeg target=_blank title=Weixin><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x" style=color:#986dbd></i><i class="fab fa-weixin fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://github.com/JaredTan95 target=_blank title=GitHub><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x" style=color:#986dbd></i><i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://jared-says.cn/index.xml target=_blank title=RSS><span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x" style=color:#986dbd></i><i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><br><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;2019
+<a href=https://jaredtan95.github.io>Jared.Tan</a>
+&nbsp;&bull;&nbsp;更新于
+2020 年 3 月 8 日
+&nbsp;&bull;&nbsp;
+<a href=https://jared-says.cn/tags/>所有文章</a>
+&nbsp;&bull;&nbsp;
+<a href=https://jared-says.cn>一万小时极客</a></p><p class="credits theme-by text-muted"><br><span id=busuanzi_container_site_pv>本站已被访问 <span id=busuanzi_value_site_pv></span>次啦</span>
+<span id=busuanzi_container_site_uv>&ensp;|&ensp;&#8201;您是第 <span id=busuanzi_value_site_uv></span>位到访的小伙伴</span></p><p class="credits theme-by text-muted">由 <a href=https://gohugo.io>Hugo v0.62.2</a> 强力驱动 &nbsp;&bull;&nbsp; 主题 <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> 移植自 <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a>
+&nbsp;&bull;&nbsp;[<a href=https://github.com/JaredTan95/JaredTan95.github.io.source/tree/65e861123ce10f33879c788a292431f4e4da19cd>65e86112</a>]<section class="credits theme-by text-muted" align=center><span class=footer__copyright><div><span id=span_dt_dt></span><script language=javascript>function show_date_time(){window.setTimeout("show_date_time()",1000);BirthDay=new Date("7/8/2017 10:56:12");today=new Date();timeold=(today.getTime()-BirthDay.getTime());sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);e_hrsold=(e_daysold-daysold)*24;hrsold=Math.floor(e_hrsold);e_minsold=(e_hrsold-hrsold)*60;minsold=Math.floor((e_hrsold-hrsold)*60);seconds=Math.floor((e_minsold-minsold)*60);span_dt_dt.innerHTML="本站已经开心运行 "+daysold+" 天 "+hrsold+" 小时 "+minsold+" 分 "+seconds+" 秒";}
+show_date_time();</script></div></script></section></p></div></div></div></footer><script src=https://my.openwrite.cn/js/readmore.js type=text/javascript></script><script>const btw=new BTWPlugin();btw.init({id:'container',blogId:'15446-1582539883324-293',name:'一万小时极客',qrcode:'http://q67bf0oit.bkt.clouddn.com/qrcode_for_gh_8584a820cd93_258.jpg',keyword:'svip',});</script><script src=/js/bundle.min.13b2d74fbe48bdf362a1e1572571a00fa30ef02c3fa8f697c71a47c9462a759a.js integrity="sha256-E7LXT75IvfNioeFXJXGgD6MO8Cw/qPaXxxpHyUYqdZo="></script><script src=https://jared-says.cn/js/load-photoswipe.js></script><div class=rocket><img src=/img/rocket_up.png alt width=100 height=100></div><script>$(function(){$(window).scroll(function(){if($(window).scrollTop()>=1000){$('.rocket').stop().fadeIn(1000);}else{$('.rocket').stop().fadeOut(1000);}})
+$('.rocket').click(function(){$('html,body').stop().animate({scrollTop:0},400);})})</script><script type=text/javascript>jQuery(function(){jQuery("img").lazyload({threshold:0,effect:"fadeIn"});});</script><script type=text/javascript>$(document).ready(function(){$(window).scroll(function(){$(".top-scroll-bar").attr("style","width: "+($(this).scrollTop()/($(document).height()-$(this).height())*100)+"%; display: block;");});})</script><script type=text/javascript>var a_idx=0;jQuery(document).ready(function($){$("body").click(function(e){var a=new Array("Docker","Kubernetes","Java","SpringCloud","Istio","Hugo","Service Mesh","Cloud Native");var $i=$("<span />").text(a[a_idx]);a_idx=(a_idx+1)%a.length;var x=e.pageX,y=e.pageY;function randomColor(){var flakeColor=new Array("#FFDA65","#00BFFF","#BA55D3","#FFA07A","#87CEEB","#FFB6C1");var snowColor=flakeColor[Math.floor(flakeColor.length*Math.random())];return snowColor;}
+$i.css({"z-index":999999999999999999999999999999999999999999999999999999999999999999999,"top":y-20,"left":x,"position":"absolute","font-weight":"bold","color":randomColor()});$("body").append($i);$i.animate({"top":y-180,"opacity":0},1500,function(){$i.remove();});});});</script></body></html>
