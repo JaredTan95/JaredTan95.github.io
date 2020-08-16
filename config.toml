@@ -62,17 +62,17 @@ enableGitInfo = true
   # gcse = "014738201351737010393:0qb0mkrjow4" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 [[Params.bigimg]]
-src = "http://q67bf0oit.bkt.clouddn.com/blog/micro-img.jpeg"
+src = "http://cdn.jared-says.cn/fdfaldjfhkjegfie.jpeg"
 desc = ""
 position = "center top"
 
 [[Params.bigimg]]
-src = "http://q67bf0oit.bkt.clouddn.com/blog/WechatIMG77.jpeg"
+src = "http://cdn.jared-says.cn/fdjkfhgefeuhfj.jpeg"
 desc = "Data Archi"
 position = "center top"
 
 [[Params.bigimg]]
-src = "http://q67bf0oit.bkt.clouddn.com/blog/micro-img-02.jpeg"
+src = "http://cdn.jared-says.cn/tyuif8g9h0jcuihojp.jpeg"
 desc = "Just Beginning"
 position = "center top"
 
@@ -90,8 +90,8 @@ position = "center top"
 
 [Author]
   name = "Jared.Tan"
-  website = "https://jaredtan95.github.io"
-  weixin = "http://q67bf0oit.bkt.clouddn.com/blog/WechatQR.jpeg"
+  website = "https://jared-says.cn/"
+  weixin = "http://cdn.jared-says.cn/WechatIMG163.jpeg"
   #weibo = "3496206342"
   email = "tanjian@apache.org"
   #facebook = "username"

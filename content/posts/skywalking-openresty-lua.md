@@ -13,7 +13,7 @@ draft: false
 toc: true
 categories: "APM"
 tags: ["Apache Skywalking", "Nginx", "OpenResty", "Lua"]
-img: "http://q67bf0oit.bkt.clouddn.com/blog/sw-archi.jpeg"
+img: "http://cdn.jared-says.cn/687474703a2f2f736b7977616c6b696e672e6170616368652e6f72672f6173736574732f6672616d652d76382e6a70673f753d3230323030343233.jpeg"
 bigimg: [{src: "http://q67bf0oit.bkt.clouddn.com/blog/19225044_MRmZ.jpg", desc: ""}]
 ---
 
